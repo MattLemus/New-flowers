@@ -1,0 +1,904 @@
+/* =========================================
+   1. RESET Y VARIABLES
+   ========================================= */
+:root {
+    --color-primary: #D84D7F; /* Rosa New Flowers */
+    --color-primary-dark: #b03a65;
+    --text-dark: #333333;
+    --text-light: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. NAVBAR (Barra Superior)
+   ========================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--text-light);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+}
+
+.icon {
+    font-size: 38px;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.icon:hover {
+    color: var(--color-primary);
+}
+.icon-img {
+    width: 40px;  
+    height: 40px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.icon-img:hover {
+    transform: scale(1.1); 
+}
+
+/* =========================================
+   8. WIDGET REDES SOCIALES
+   ========================================= */
+.social-widget {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.social-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Menú oculto */
+.social-popup {
+    position: absolute;
+    top: 140%; /* Debajo del icono */
+    right: -10px; /* Alineado a la derecha */
+    background: white;
+    padding: 12px;
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    display: flex;
+    gap: 12px;
+    
+    /* Animación */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px) scale(0.9);
+    transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    z-index: 1000;
+}
+
+/* Estado Visible */
+.social-popup.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+/* Botones Redondos */
+.social-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: transform 0.2s;
+}
+
+.social-item:hover {
+    transform: translateY(-5px); /* Salto al pasar el mouse */
+}
+
+/* Colores Oficiales */
+.instagram { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
+.facebook { background: #1877F2; }
+.tiktok { background: #000000; }
+
+/* =========================================
+   3. HERO SECTION (Mobile First)
+   ========================================= */
+.hero {
+    position: relative;
+    height: 85vh; /* Ocupa 85% de la pantalla del celular */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Imagen de fondo optimizada */
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen para llenar el espacio */
+    z-index: -2;
+}
+
+/* Capa oscura para legibilidad */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35); /* 35% de negro transparente */
+    z-index: -1;
+}
+
+.hero-content {
+    padding: 0 20px;
+    color: var(--text-light);
+    max-width: 600px;
+    /* Animación suave de entrada */
+    animation: fadeIn 1s ease-out;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    font-weight: 400;
+}
+
+/* Botón Principal */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 14px 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+/* Animación simple */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   4. MEDIA QUERIES (Versión PC)
+   ========================================= */
+@media (min-width: 768px) {
+    .hero {
+        height: 90vh;
+    }
+
+    .hero h1 {
+        font-size: 4.5rem; /* Título gigante en PC */
+    }
+
+    .hero p {
+        font-size: 1.3rem;
+    }
+    
+    .navbar {
+        padding: 15px 50px;
+    }
+    
+    .logo-img {
+        height: 70px; /* Logo más grande en PC */
+    }
+}
+/* =========================================
+   5. SECCIÓN DE GARANTÍAS
+   ========================================= */
+.guarantees {
+    padding: 40px 20px;
+    background-color: #fff9fb; /* Un rosa casi blanco, muy sutil */
+    
+    /* MAGIA GRID: En celular se ve 2x2 automáticamente */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px 20px; /* 30px espacio vertical, 20px horizontal */
+    text-align: center;
+}
+
+.guarantee-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.guarantee-icon {
+    font-size: 32px; /* Tamaño del icono */
+    color: var(--color-primary); /* Usa tu variable rosa (#D84D7F) */
+    margin-bottom: 10px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 50%; /* Círculo perfecto alrededor del icono */
+    box-shadow: 0 4px 10px rgba(216, 77, 127, 0.1); /* Sombrita rosa suave */
+    transition: transform 0.3s ease;
+}
+
+.guarantee-item:hover .guarantee-icon {
+    transform: translateY(-5px); /* Pequeño salto al pasar el mouse */
+}
+
+.guarantee-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.guarantee-item p {
+    font-size: 0.85rem;
+    color: #666;
+    font-weight: 400;
+}
+
+/* AJUSTE PARA COMPUTADORA (4 en fila) */
+@media (min-width: 768px) {
+    .guarantees {
+        grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
+        padding: 60px 100px;
+        gap: 40px;
+    }
+
+    .guarantee-icon {
+        font-size: 40px; /* Iconos más grandes en PC */
+        padding: 20px;
+    }
+
+    .guarantee-item h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* =========================================
+   6. SECCIÓN DE PRODUCTOS
+   ========================================= */
+.products-section {
+    padding: 30px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--color-primary); /* Tu rosa #D84D7F */
+    margin-bottom: 10px;
+}
+
+/* GRILLA RESPONSIVA (Mobile First) */
+.products-grid {
+    display: grid;
+    /* Esto coloca 2 columnas en celular y hasta 4 en PC automáticamente */
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); 
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 fijos en PC */
+        gap: 30px;
+    }
+}
+
+/* DISEÑO DE LA TARJETA */
+.product-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Efecto flotante */
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #f9f9f9;
+    overflow: hidden;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease-in-out;
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.1);
+}
+
+.badge {
+    position: absolute;
+    top: 10px; left: 10px;
+    background: var(--color-primary);
+    color: white;
+    padding: 4px 10px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.product-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.product-info h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.btn-add {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.btn-add:hover {
+    background: var(--color-primary);
+    color: white;
+}
+/* =========================================
+   7. FOOTER
+   ========================================= */
+/* =========================================
+   7. FOOTER (BRAND IDENTITY: PINK & BLACK)
+   ========================================= */
+.site-footer {
+    background-color: #fff9fb; /* Fondo muy suave rosado/blanco */
+    padding: 60px 20px 20px;
+    margin-top: 60px;
+    border-top: 3px solid var(--color-primary); /* Borde Rosa New Flowers */
+    color: var(--text-dark);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* Logo y Títulos */
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--color-primary); /* Rosa */
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.footer-col h3 {
+    font-size: 1.1rem;
+    color: #000; /* Títulos en negro fuerte */
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Textos */
+.footer-text {
+    font-size: 0.95rem;
+    color: #444; /* Gris oscuro para lectura */
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.footer-text i {
+    color: var(--color-primary); /* Iconos rosa */
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+/* Locales */
+.location-item {
+    margin-bottom: 15px;
+    border-left: 2px solid #eee;
+    padding-left: 10px;
+}
+
+.loc-name {
+    display: block;
+    font-weight: 700;
+    color: #000;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+/* Enlaces */
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #444;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+/* Redes Sociales */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-links a {
+    font-size: 1.8rem;
+    color: var(--text-dark); /* Iconos negros */
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--color-primary); /* Se vuelven rosa al pasar el mouse */
+    transform: translateY(-3px);
+}
+
+/* Copyright */
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    font-size: 0.85rem;
+    color: #666;
+}
+/* =========================================
+   9. SECCIÓN DE UBICACIONES
+   ========================================= */
+.locations-section {
+    padding: 20px 20px;
+    background-color: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.locations-grid {
+    display: grid;
+    /* Dos columnas en PC, una en móvil */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.location-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Sombra elegante */
+    border: 1px solid #eee;
+    transition: transform 0.3s ease;
+}
+
+.location-card:hover {
+    transform: translateY(-5px);
+}
+
+/* El Marco del Mapa (Parece una foto) */
+.map-frame {
+    width: 100%;
+    height: 250px; /* Altura del mapa */
+    background-color: #eee;
+    position: relative;
+}
+
+/* Filtro opcional para que el mapa combine mejor (grayscale) 
+   Si prefieres el mapa a todo color, borra esta línea de 'filter'. */
+.map-frame iframe {
+    filter: saturate(0.8); 
+}
+
+.location-details {
+    padding: 25px;
+    text-align: center;
+    position: relative;
+}
+
+/* Icono flotante redondo entre el mapa y el texto */
+.icon-box {
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-primary);
+    color: white;
+    font-size: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -50px auto 15px; /* Truco para subirlo sobre el mapa */
+    position: relative;
+    border: 4px solid white; /* Borde blanco para separar */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.location-details h3 {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.address {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.address i {
+    color: var(--color-primary);
+    margin-right: 5px;
+}
+
+.btn-location {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-location:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+/* =========================================
+   SECCIÓN DE CATEGORÍAS
+   ========================================= */
+.categories-section {
+    padding: 20px 20px 80px; /* Un poco de aire */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.categories-grid {
+    display: grid;
+    /* Móvil: 1 col, Tablet: 2 cols, PC: 4 cols */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.category-card {
+    position: relative;
+    height: 350px; /* Altura fija para que se vean uniformes */
+    border-radius: 15px;
+    overflow: hidden;
+    display: block;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.cat-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Capa oscura para que se lea el texto */
+.cat-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent 60%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 25px;
+    color: white;
+}
+
+.cat-overlay h3 {
+    font-size: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 5px;
+    transform: translateY(0);
+    transition: transform 0.3s;
+}
+
+.btn-text {
+    font-size: 0.9rem;
+    font-weight: 700;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transform: translateY(10px); /* Ligeramente oculto */
+    transition: all 0.3s;
+}
+
+/* Efectos Hover */
+.category-card:hover .cat-img {
+    transform: scale(1.1); /* Zoom suave a la foto */
+}
+
+.category-card:hover .btn-text {
+    opacity: 1;
+    transform: translateY(0); /* Sube el texto */
+    color: var(--color-primary); /* Se pone rosa */
+}
+/* =========================================
+   10. SECCIÓN DE RESEÑAS (MOBILE FIRST)
+   ========================================= */
+.reviews-section {
+    padding: 50px 0; /* Quitamos padding lateral para que el carrusel toque los bordes */
+    background-color: #fcfcfc;
+    border-top: 1px solid #eee;
+    overflow: hidden; /* Evita scroll horizontal en toda la página */
+}
+
+.reviews-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* 1. Resumen (Cabecera) */
+.review-summary {
+    padding: 0 20px; /* Padding interno solo para el texto */
+    text-align: center; /* Centrado en móvil para que se vea ordenado */
+}
+
+.review-summary h3 {
+    font-size: 1.8rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.rating-big {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrado */
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.score {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+.rating-big .stars {
+    color: #F4B400;
+    font-size: 1.2rem;
+}
+
+.review-count {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.btn-review {
+    display: inline-block;
+    padding: 8px 20px;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    background: white;
+}
+
+/* 2. El Carrusel (La parte importante) */
+.reviews-track {
+    display: flex;
+    gap: 15px;
+    
+    /* Magia del Scroll Horizontal */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; /* Efecto Imán */
+    
+    /* Padding lateral para que la primera tarjeta no quede pegada al borde */
+    padding: 10px 20px 30px 20px; 
+    
+    -webkit-overflow-scrolling: touch; /* Suavidad en iPhone */
+    scrollbar-width: none; /* Ocultar barra en Firefox */
+}
+
+.reviews-track::-webkit-scrollbar {
+    display: none; /* Ocultar barra en Chrome/Safari */
+}
+
+/* 3. Las Tarjetas */
+.review-card {
+    /* MÓVIL: 85% del ancho de la pantalla para ver la siguiente tarjeta */
+    min-width: 85vw; 
+    max-width: 85vw;
+    
+    background: white;
+    padding: 20px;
+    border-radius: 16px; /* Bordes más redondos */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    border: 1px solid #f0f0f0;
+    
+    scroll-snap-align: center; /* La tarjeta se centra sola al soltar */
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER DE LA RESEÑA */
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.user-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #555;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.user-info h4 {
+    font-size: 0.95rem;
+    margin: 0;
+    color: #333;
+    font-weight: 700;
+}
+
+.user-info span {
+    font-size: 0.75rem;
+    color: #999;
+}
+
+.verified-icon {
+    color: #4285F4;
+    margin-left: auto;
+}
+
+.stars-small {
+    color: #F4B400;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.review-text {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+/* =========================================
+   MEDIA QUERY: VERSIÓN ESCRITORIO (PC)
+   ========================================= */
+@media (min-width: 992px) {
+    .reviews-section {
+        padding: 80px 20px;
+    }
+
+    .reviews-container {
+        flex-direction: row; /* Lado a lado en PC */
+        align-items: flex-start;
+    }
+    
+    .review-summary {
+        text-align: left; /* Alineado a la izquierda en PC */
+        min-width: 280px;
+        position: sticky; /* Se queda fijo mientras scrolleas */
+        top: 100px;
+    }
+
+    .rating-big {
+        justify-content: flex-start;
+    }
+
+    /* En PC las tarjetas tienen tamaño fijo */
+    .review-card {
+        min-width: 320px;
+        max-width: 320px;
+        scroll-snap-align: start; /* Alineado al inicio */
+    }
+}
