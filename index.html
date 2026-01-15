@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Floristería New Flowers en Ambato. Arreglos florales únicos y regalos personalizados en Ficoa.">
+    <title>New Flowers - Ambato</title>
+    
+    <link rel="stylesheet" href="style/styles.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <i class="ph ph-list icon" aria-label="Abrir menú"></i>
+        
+        <img src="assets/logo.webp" alt="New Flowers Logo" class="logo-img">
+        
+        <div class="social-widget">
+            <button class="social-toggle" aria-label="Ver redes sociales" onclick="toggleSocialMenu()">
+                <img src="assets/icono-redes.svg" alt="Social" class="icon-img">
+            </button>
+
+            <div class="social-popup" id="socialPopup">
+                <a href="https://www.instagram.com/78newflowers/" target="_blank" class="social-item instagram">
+                    <i class="ph ph-instagram-logo"></i>
+                </a>
+                
+                <a href="https://www.facebook.com/NewFlowers78" target="_blank" class="social-item facebook">
+                    <i class="ph ph-facebook-logo"></i>
+                </a>
+                
+                <a href="https://www.tiktok.com/@newflowers_78" target="_blank" class="social-item tiktok">
+                    <i class="ph ph-tiktok-logo"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <img 
+            src="assets/herosection.webp" 
+            srcset="
+                assets/herosection.webp 480w, 
+                assets/herosection.webp 1200w
+            "
+            sizes="(max-width: 600px) 480px, 100vw"
+            alt="Arreglo floral romántico de New Flowers Ambato"
+            class="hero-bg"
+            fetchpriority="high"
+        >
+
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+            <h1>Regala Emociones Inolvidables</h1>
+            <p>Arreglos florales y detalles personalizados en Ficoa.</p>
+            <a href="#" class="btn-primary">VER CATÁLOGO</a>
+        </div>
+    </section>
+
+    <section class="guarantees">
+        <div class="guarantee-item">
+            <i class="ph ph-flower-tulip guarantee-icon"></i>
+            <h3>Flores Frescas</h3>
+            <p>Seleccionadas cada día</p>
+        </div>
+
+        <div class="guarantee-item">
+            <i class="ph ph-truck guarantee-icon"></i>
+            <h3>Envíos en Ambato</h3>
+            <p>Entrega rápida y segura</p>
+        </div>
+
+        <div class="guarantee-item">
+            <i class="ph ph-gift guarantee-icon"></i>
+            <h3>Detalles Únicos</h3>
+            <p>Diseños personalizados</p>
+        </div>
+
+        <div class="guarantee-item">
+            <i class="ph ph-shield-check guarantee-icon"></i>
+            <h3>Compra Segura</h3>
+            <p>100% Confianza</p>
+        </div>
+    </section>
+    <section class="products-section" id="catalogo">
+        <div class="section-header">
+            <h2>Mas vendidos</h2>
+            <p>Los arreglos más populares en Ambato</p>
+        </div>
+
+        <div class="products-grid" id="contenedor-productos"></div>
+    </section>
+
+    <section class="categories-section">
+        <div class="section-header">
+            <h2>Busca por Ocasión</h2>
+            <p>Dinos qué celebras y te diremos qué regalar</p>
+        </div>
+
+        <div class="categories-grid">
+            
+            <a href="catalogo.html?cat=amor" class="category-card">
+                <img src="assets/amor-portadaa.webp" alt="Arreglos de Amor" class="cat-img">
+                <div class="cat-overlay">
+                    <h3>Amor & Aniversario</h3>
+                    <span class="btn-text">Ver opciones <i class="ph ph-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="catalogo.html?cat=cumpleanos" class="category-card">
+                <img src="assets/cumpleaños.webp" alt="Arreglos de Cumpleaños" class="cat-img">
+                <div class="cat-overlay">
+                    <h3>Cumpleaños</h3>
+                    <span class="btn-text">Ver opciones <i class="ph ph-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="catalogo.html?cat=condolencias" class="category-card">
+                <img src="assets/condolencias.jpg" alt="Arreglos Fúnebres" class="cat-img">
+                <div class="cat-overlay">
+                    <h3>Condolencias</h3>
+                    <span class="btn-text">Ver opciones <i class="ph ph-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="catalogo.html?cat=especiales" class="category-card">
+                <img src="assets/cajas.webp" alt="Cajas y Licores" class="cat-img">
+                <div class="cat-overlay">
+                    <h3>Cajas & Detalles</h3>
+                    <span class="btn-text">Ver opciones <i class="ph ph-arrow-right"></i></span>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <section class="locations-section">
+        <div class="section-header">
+            <h2>Nuestros Locales</h2>
+            <p>Encuéntranos en Ficoa y Av. Víctor Hugo</p>
+        </div>
+
+        <div class="locations-grid">
+            
+            <article class="location-card">
+                <div class="map-frame">
+                    <iframe 
+                        title="Mapa Ficoa"
+                        src="https://maps.google.com/maps?q=New+Flowers+M%26D+Ficoa+Ambato&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+                <div class="location-details">
+                    <div class="icon-box">
+                        <i class="ph ph-flower-tulip"></i>
+                    </div>
+                    <h3>NEW FLOWERS M&D (Ficoa)</h3>
+                    <p class="address">
+                        <i class="ph ph-map-pin"></i> Av. Los Guaytambos y Magnolias<br>
+                        (Sector Las Palmas)
+                    </p>
+                    <p class="schedule"><i class="ph ph-clock"></i> Lun - Sáb: 9:00 - 20:00</p>
+                    
+                    <a href="https://www.google.com/maps/search/?api=1&query=New+Flowers+M%26D+Ficoa" target="_blank" class="btn-location">
+                        Cómo llegar <i class="ph ph-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="location-card">
+                <div class="map-frame">
+                    <iframe 
+                        title="Mapa Av. Víctor Hugo"
+                        src="https://maps.google.com/maps?q=New+Flowers+Avenida+Victor+Hugo+Ambato&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+                <div class="location-details">
+                    <div class="icon-box">
+                        <i class="ph ph-storefront"></i>
+                    </div>
+                    <h3>New Flowers (Sur)</h3>
+                    <p class="address">
+                        <i class="ph ph-map-pin"></i> Av. Víctor Hugo<br>
+                        Ambato - Ecuador
+                    </p>
+                    <p class="schedule"><i class="ph ph-clock"></i> Lun - Sáb: 8:00 - 19:00</p>
+                    
+                    <a href="https://www.google.com/maps/search/?api=1&query=New+Flowers+Avenida+Victor+Hugo+Ambato" target="_blank" class="btn-location">
+                        Cómo llegar <i class="ph ph-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    
+    <section class="reviews-section">
+        <div class="reviews-container">
+            
+            <div class="review-summary">
+                <h3>Opinion de nuestros clientes</h3>
+                <div class="rating-big">
+                    <span class="score">5.0</span>
+                    <div class="stars">
+                        <i class="ph-fill ph-star"></i>
+                        <i class="ph-fill ph-star"></i>
+                        <i class="ph-fill ph-star"></i>
+                        <i class="ph-fill ph-star"></i>
+                        <i class="ph-fill ph-star"></i>
+                    </div>
+                </div>
+                <p class="review-count">Basado en clientes felices</p>
+                <a href="https://wa.me/593997035437?text=Hola,%20quiero%20dejar%20mi%20opinión..." target="_blank" class="btn-review">
+                    Escribe una reseña
+                </a>
+            </div>
+
+            <div class="reviews-track">
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="user-avatar" style="background: #FFD1DC;">SM</div>
+                        <div class="user-info">
+                            <h4>Sofia Galarza</h4>
+                            <span>Hace 1 mes</span>
+                        </div>
+                        <i class="ph-fill ph-check-circle verified-icon"></i>
+                    </div>
+                    <div class="stars-small">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="review-text">"Vivo en Quito y quería sorprender a mi mamá en Ambato. Todo llegó perfecto y a tiempo."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="user-avatar" style="background: #E0F7FA;">PM</div>
+                        <div class="user-info">
+                            <h4>Emilia mayorga</h4>
+                            <span>Hace 2 semanas</span>
+                        </div>
+                        <i class="ph-fill ph-check-circle verified-icon"></i>
+                    </div>
+                    <div class="stars-small">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="review-text">"Excelente servicio 100% recomendado. Las flores llegaron fresquitas a Ficoa y el arreglo precioso."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="user-avatar" style="background: #FFF9C4;">KB</div>
+                        <div class="user-info">
+                            <h4>Karelis Brea</h4>
+                            <span>Hace 3 meses</span>
+                        </div>
+                        <i class="ph-fill ph-check-circle verified-icon"></i>
+                    </div>
+                    <div class="stars-small">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="review-text">"Buen servicio y buena calidad de flores. Hice el pedido por WhatsApp y la respuesta fue rápida."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="user-avatar" style="background: #E1BEE7;">LC</div>
+                        <div class="user-info">
+                            <h4>Luis Castillo</h4>
+                            <span>Hace 1 semana</span>
+                        </div>
+                        <i class="ph-fill ph-check-circle verified-icon"></i>
+                    </div>
+                    <div class="stars-small">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="review-text">"Me salvaron el aniversario a última hora. La atención en el local de la Víctor Hugo fue excelente."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="user-avatar" style="background: #C8E6C9;">AG</div>
+                        <div class="user-info">
+                            <h4>Ana Gómez</h4>
+                            <span>Hace 2 días</span>
+                        </div>
+                        <i class="ph-fill ph-check-circle verified-icon"></i>
+                    </div>
+                    <div class="stars-small">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="review-text">"El desayuno sorpresa estaba delicioso y la presentación impecable. Mi mamá quedó encantada."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="user-avatar" style="background: #FFECB3;">JP</div>
+                        <div class="user-info">
+                            <h4>Juan Pérez</h4>
+                            <span>Hace 3 semanas</span>
+                        </div>
+                        <i class="ph-fill ph-check-circle verified-icon"></i>
+                    </div>
+                    <div class="stars-small">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="review-text">"Las rosas duraron más de una semana. Se nota que usan flor de calidad. Recomendados."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="user-avatar" style="background: #B2DFDB;">MR</div>
+                        <div class="user-info">
+                            <h4>María Rodríguez</h4>
+                            <span>Hace 1 mes</span>
+                        </div>
+                        <i class="ph-fill ph-check-circle verified-icon"></i>
+                    </div>
+                    <div class="stars-small">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="review-text">"Detalles únicos que no se encuentran en otras floristerías de Ambato. Muy amables en la atención."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="user-avatar" style="background: #F8BBD0;">CS</div>
+                        <div class="user-info">
+                            <h4>Carla Silva</h4>
+                            <span>Hace 4 días</span>
+                        </div>
+                        <i class="ph-fill ph-check-circle verified-icon"></i>
+                    </div>
+                    <div class="stars-small">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="review-text">"La caja de girasoles fue un éxito total. Gracias por entregar en Ingahurco tan rápido."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="user-avatar" style="background: #D1C4E9;">DV</div>
+                        <div class="user-info">
+                            <h4>David Villacís</h4>
+                            <span>Hace 2 meses</span>
+                        </div>
+                        <i class="ph-fill ph-check-circle verified-icon"></i>
+                    </div>
+                    <div class="stars-small">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="review-text">"Seriedad y cumplimiento. Pagué por transferencia y entregaron a la hora exacta en mi domicilio."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="user-avatar" style="background: #FFCCBC;">FL</div>
+                        <div class="user-info">
+                            <h4>Fernanda López</h4>
+                            <span>Hace 1 semana</span>
+                        </div>
+                        <i class="ph-fill ph-check-circle verified-icon"></i>
+                    </div>
+                    <div class="stars-small">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="review-text">"Hermoso arreglo fúnebre, muy elegante. Gracias por ayudarnos en un momento difícil."</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            
+            <div class="footer-col">
+                <h3 class="footer-logo">New Flowers</h3>
+                <p class="footer-text">
+                    Arreglos florales y detalles personalizados en Ficoa. Sorprende con elegancia.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Explorar</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li><a href="#">San Valentín</a></li>
+                    <li><a href="#">Licores</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Nuestros Locales</h3>
+                
+                <div class="location-item">
+                    <span class="loc-name">Local 1 (Matriz)</span>
+                    <p class="footer-text">
+                        <i class="ph ph-map-pin"></i> Ficoa, Av. Los Guaytambos y Magnolias
+                    </p>
+                </div>
+
+                <div class="location-item">
+                    <span class="loc-name">Local 2</span>
+                    <p class="footer-text">
+                        <i class="ph ph-storefront"></i> Av. Los Guaytambos (Sector Las Palmas)
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3>Contacto</h3>
+                <p class="footer-text"><i class="ph ph-whatsapp-logo"></i> 099 703 5437</p>
+                <p class="footer-text"><i class="ph ph-envelope"></i> maidazabala_78@hotmail.com</p>
+                
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="ph ph-tiktok-logo"></i></a>
+                    <a href="https://wa.me/593997035437" target="_blank" aria-label="WhatsApp"><i class="ph ph-whatsapp-logo"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 New Flowers Ambato.</p>
+        </div>
+    </footer>
+
+    <script src="script/script.js"></script>
+
+</body>
+</html>
