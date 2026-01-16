@@ -342,15 +342,20 @@ body {
 /* DISEÑO DE LA TARJETA */
 .product-card {
     background: white;
-    border-radius: 10px;
-    overflow: hidden;
+    
+    /* CAMBIO: De 3px a 1px */
+    border: 1px solid var(--color-primary); 
+    border-radius: 20px; 
+    
+    overflow: hidden; 
+    
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     transition: transform 0.3s ease;
-    border: 1px solid #eee;
 }
 
 .product-card:hover {
-    transform: translateY(-5px); /* Efecto flotante */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(216, 77, 127, 0.15);
 }
 
 .image-container {
@@ -358,9 +363,7 @@ body {
     width: 100%;
     aspect-ratio: 1 / 1;
     background-color: #f9f9f9;
-    overflow: hidden;
 }
-
 .product-img {
     width: 100%;
     height: 100%;
@@ -900,5 +903,170 @@ body {
         min-width: 320px;
         max-width: 320px;
         scroll-snap-align: start; /* Alineado al inicio */
+    }
+}
+/* =========================================
+   11. ESTILOS ESPECÍFICOS DEL CATÁLOGO
+   (Copiar al final del archivo styles.css)
+   ========================================= */
+
+/* A. NAVEGACIÓN PEGALAJOSA (Solo Catálogo) */
+.sticky-cat-nav {
+    position: sticky;
+    top: 0;
+    background: #fff; /* Fondo blanco sólido */
+    padding: 15px 20px;
+    z-index: 1000; /* Por encima de todo */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+}
+
+.back-link {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: var(--color-primary);
+}
+
+/* B. HEADER DEL CATÁLOGO */
+.catalog-header {
+    text-align: center;
+    padding: 30px 20px 20px;
+    background-color: #fcfcfc;
+}
+
+.catalog-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.catalog-header p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* C. CONTENEDOR DE FILTROS (EL CEREBRO VISUAL) */
+.filter-container {
+    background: #fff;
+    padding: 30px 20px; /* Un poco más de aire */
+    border-bottom: 1px solid #eee;
+    
+    /* CAMBIO 1: ELIMINAR STICKY (Ya no persigue) */
+    position: relative; 
+    z-index: 1; 
+
+    /* CAMBIO 2: CENTRADO ABSOLUTO */
+    display: flex;
+    flex-direction: column; /* Apila los grupos verticalmente */
+    align-items: center;    /* Centra los grupos horizontalmente */
+    justify-content: center;
+    gap: 15px; /* Espacio entre filas de filtros */
+}
+
+.filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center; /* CAMBIO: Centra los botones dentro del grupo */
+    gap: 10px;
+    width: 100%; /* Ocupa todo el ancho para poder centrar */
+}
+
+.filter-group span {
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-right: 10px;
+    font-size: 0.95rem;
+    /* En móvil, el título irá arriba centrado */
+}
+
+/* D. BOTONES DE FILTRO */
+.filter-btn {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 6px 16px;
+    border-radius: 50px; /* Forma de píldora */
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    color: #555;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+/* Estado Activo (Botón Rosa Relleno) */
+.filter-btn.active {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(216, 77, 127, 0.3);
+}
+
+/* E. LÓGICA DE OCULTAMIENTO (CRÍTICO PARA EL JS) */
+.product-card {
+    /* La animación hace que suba suavemente al aparecer */
+    animation: fadeInProduct 0.5s ease-out;
+}
+
+/* Esta clase la pone el JS para esconder productos */
+.product-card.hidden {
+    display: none !important;
+}
+
+@keyframes fadeInProduct {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* F. ENLACE DE CONDOLENCIAS (ESTÉTICA) */
+.link-condolencias {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #f8f9fa;
+    color: #555;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    border: 1px solid #eee;
+    transition: all 0.3s;
+    font-weight: 600;
+}
+
+.link-condolencias:hover {
+    background-color: #fff;
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* AJUSTES PARA CELULAR */
+@media (max-width: 768px) {
+    .filter-container {
+        padding: 20px 10px;
+    }
+    
+    .filter-group span {
+        display: block;
+        width: 100%;
+        text-align: center; /* Título centrado en celular */
+        margin-bottom: 5px;
+        color: var(--color-primary);
     }
 }
