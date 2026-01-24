@@ -1,23 +1,105 @@
 /* =========================================
-   SCRIPT FINAL (CORRECCIÓN DE COMAS)
+   SCRIPT DEFINITIVO (CON AUTO-FILTRO URL)
    ========================================= */
 
-// URL corregida con el truco &t= para romper caché
-const URL_DATOS = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS6ABuvbpPugaqGuN7KtJxGlVDUqiGZ0g5nYdZyHfwp7NnjFq_OgcgioR3M-pjG5_ppEy1UgrrFhsOI/pub?gid=0&single=true&output=csv&t=' + Date.now();
+const DATOS_CSV = `
+ID,FOTO REFERENCIAL,NOMBRE,PRECIO,CATEGORIA
+precio-70,,Ramo Girasoles,50,"amor, ramo"
+precio-8,,Ramo Princesa,45,"cumpleanos, ramo, rosas"
+precio-9,,Caja Corazón,25,"amor, caja, rosas"
+precio-69,,Caja Mixta Rosa,50,"caja, mix"
+precio-7,,Caja Corona Roja,50,"amor, caja, rosas"
+precio-68,,Caja Mixta Lila,25,"caja, mix"
+precio-67,,Buchón Rojo,0,"amor, rosas, ramo"
+precio-65,,Arco Globos,0,globos
+precio-64,,Conos Gerberas,4,"especiales, mix, ramo"
+precio-66,,Fresas con Globo,30,"amor, frutales, cumpleanos"
+precio-63,,Ramo Rosas Lila,35,"especiales, mix, ramo"
+precio-60,,Globos Techo,0,globos
+precio-62,,Ramo Corazón,35,"especiales, mix, ramo"
+precio-6,,Caja Flores Globo,30,"cumpleanos, caja, mix"
+precio-61,,Fresas con Números,0,"amor, caja, rosas, frutales"
+precio-58,,Caja Mixta Pastel,25,"especiales, mix, caja"
+precio-59,,Ramo Lirios Rosa,25,"especiales, ramo, mix"
+precio-57,,Caja Lirios Mix,30,"especiales, mix, caja"
+precio-55,,Desayuno con Flores,0,"caja, frutales, mix"
+precio-56,,Caja Regalo Papá,25,"caja, cumpleanos"
+precio-54,,Caja Rosas Globo,35,"cumpleanos, mix, caja"
+precio-53,,Ramo Lirios Rosa,7,"especiales, ramo, mix"
+precio-52,,Corazón con Luces,0,"amor, rosas"
+precio-50,,Caja Lirios Roja,60,"especiales, mix, amor"
+precio-51,,Corazón Ferrero,0,"amor, rosas"
+precio-5,,Caja Rosas Amarillas,25,"mix, caja"
+precio-44,,Ramo Hortensias Fucsia,25,"ramo, mix, amor"
+precio-48,,Caja Rosas Mariposa,25,"especiales, caja, mix"
+precio-49,,Ramo Rosas Pastel,0,"ramo, mix, amor"
+precio-46,,Caja Rosas Multicolor,30,"amor, caja, rosas"
+precio-47,,Caja con Rosas y Ferreros,0,"amor, caja, rosas"
+precio-43,,Ramo Corona Roja,0,"amor, ramo, rosas"
+precio-45,,Ramo Fresas,0,"amor, frutales, ramo"
+precio-42,,Ramo Propuesta,0,"amor, rosas, ramo"
+precio-41,,Caja Globo Pastel,35,"caja, mix"
+precio-39,,Caja Lila Mix,0,"caja, mix, amor"
+precio-4,,Ramo Snoopy,40,"ramo, mix, cumpleanos"
+precio-40,,Ramo Oso Rosa,35,"amor, ramo"
+precio-35,,Caja Azul Mini,20,"mix, caja"
+precio-38,,Ramo Cono Rosa,0,"ramo, mix, amor"
+precio-37,,Ramillete Gerbera,5,"mix, ramo"
+precio-36,,Trio Globos Pastel,45,"caja, mix, cumpleanos"
+precio-33,,Globo Burbuja Lila,40,"caja, rosas, cumpleanos"
+precio-34,,Lirios en Caja,35,"caja, mix, amor"
+precio-32,,Bolso Floral,15,"mix, caja, amor"
+precio-29,,Box Graduación,0,"caja, mix, cumpleanos"
+precio-31,,Cilindro Azul Mix,25,"caja, rosas, amor"
+precio-30,,Buchón Girasol,0,"ramo, rosas, amor"
+precio-3,,Ramo Hot Wheels,20,"ramo, mix"
+precio-28,,Caja Estrella Rosa,25,"caja, mix, cumpleanos"
+precio-27,,Ramo Lirios Rosas,20,"ramo, mix"
+precio-25,,Corazón Pedestal Bicolor,70,condolencias
+precio-26,,Parante Lirios,70,condolencias
+precio-24,,Corazón Pedestal Girasol,60,condolencias
+precio-23,,Parante Lágrima,70,condolencias
+precio-14,,Caja Oso Lirios,0,"caja, mix, amor"
+precio-12,,Ramo Corazón Gigante,0,"ramo, rosas, amor"
+precio-11,,Ramo Naranja Mix,0,"ramo, mix"
+precio-16,,Ramo Corona Mix,25,"ramo, mix, amor, cumpleanos"
+precio-2,,Caja Rosas Dos Tonos,25,"caja, rosas"
+precio-22,,Corazón Blanco,70,condolencias
+precio-21,,Lazo Floral,70,condolencias
+precio-18,,Corazón Kinder,40,"amor, rosas"
+precio-10,,Caja Stitch,45,"cumpleanos, caja, mix"
+precio-19,,Ramo Rojo Girasol,0,"ramo, rosas, mix"
+precio-20,,Bolso Fresas,25,"frutales, caja"
+precio-17,,Corazón Bicolor Ferrero,50,"amor, caja, rosas"
+precio-15,,Caja Sulley,30,"rosas, caja, amor"
+precio-13,,Ramo Estrella,30,"mix, ramo"
+precio-1,,Caja Lotso,50,"amor, caja, mix"
+precio-71,,Arreglo Fúnebre,0,condolencias
+precio-72,,Ramo Pastel,0,sanvalentin
+precio-73,,Ramo Ferrero,,sanvalentin
+precio-74,,Ramo Lila,,sanvalentin
+precio-75,,Ramo Corazón,,sanvalentin
+precio-76,,Corazón Ferrero,,sanvalentin
+precio-77,,Caja Cumpleaños,,sanvalentin
+precio-78,,Caja Amor,,sanvalentin
+precio-79,,Globo Rosas,,sanvalentin
+precio-80,,Globo Elefante,,sanvalentin
+`; 
+// ^^^ PEGA TUS DATOS ARRIBA ENTRE LAS COMILLAS ^^^
 
-document.addEventListener("DOMContentLoaded", async () => {
+
+document.addEventListener("DOMContentLoaded", () => {
     try {
-        const respuesta = await fetch(URL_DATOS);
-        const texto = await respuesta.text();
-        const inventario = procesarCSV(texto);
+        // En lugar de fetch, leemos la variable directa (0 segundos de espera)
+        const inventario = procesarCSV(DATOS_CSV);
         renderizarWeb(inventario);
     } catch (error) {
-        console.error(error);
-        alert("Error cargando: " + error.message);
+        console.error("Error procesando datos:", error);
     }
+    // Iniciamos observadores
+    iniciarObservadorEstaticos();
 });
 
-/* --- AQUÍ ESTABA EL PROBLEMA Y ESTA ES LA SOLUCIÓN --- */
 function procesarCSV(csv) {
     const productos = [];
     const filas = csv.split('\n');
@@ -25,22 +107,20 @@ function procesarCSV(csv) {
     for (let i = 1; i < filas.length; i++) {
         const fila = filas[i].trim();
         if (fila) {
-            // MAGIA: Esta expresión regular separa por comas PERO ignora las que están dentro de comillas ""
-            // Así lee "cumpleanos, ramo" como UN solo dato, no dos.
             const regexCSV = /,(?=(?:(?:[^"]*"){2})*[^"]*$)/;
             const cols = fila.split(regexCSV);
             
+            // VALIDACIÓN MEJORADA
             if (cols.length >= 1) {
                 const idRaw = cols[0].trim();
-                if (!idRaw) continue;
-
-                // Limpiamos las comillas extra que pone Google ("dato" -> dato)
-                let etiquetasRaw = cols[4] ? cols[4].replace(/"/g, '').toLowerCase().trim() : "todos";
                 
-                // Extraemos precio y nombre limpiando comillas también
+                // AQUÍ ESTÁ EL ARREGLO:
+                // Si el ID está vacío O si dice "id" (es el título), saltamos esta fila.
+                if (!idRaw || idRaw.toLowerCase() === 'id') continue;
+
+                let etiquetasRaw = cols[4] ? cols[4].replace(/"/g, '').toLowerCase().trim() : "todos";
                 const nombre = cols[2] ? cols[2].replace(/"/g, '').trim() : "Sin Nombre";
                 const precioRaw = cols[3] ? cols[3].replace(/"/g, '').trim() : "0";
-                
                 const precio = parseFloat(precioRaw.replace('$','').replace(',','.'));
                 const numeroID = idRaw.split('-')[1] || "placeholder";
                 
@@ -58,29 +138,43 @@ function procesarCSV(csv) {
 }
 
 function renderizarWeb(productos) {
-    const grid = document.getElementById("grid-principal"); // Catálogo
-    const home = document.getElementById("contenedor-productos"); // Inicio
+    const gridCatalogo = document.getElementById("grid-principal");
+    const gridDecoraciones = document.getElementById("grid-decoraciones");
+    const gridSanValentin = document.getElementById("grid-sanvalentin"); // Nuevo selector
+    const home = document.getElementById("contenedor-productos");
 
-    // Lógica Home
-    if (home) {
-        home.innerHTML = "";
-        productos.slice(0, 8).forEach(prod => home.innerHTML += htmlTarjeta(prod, ""));
-        return;
+    const tagsExcluidos = ['condolencias', 'globos', 'decoracion'];
+
+    // 1. Lógica para Página San Valentín (Solo lo que tenga el tag sanvalentin)
+    if (gridSanValentin) {
+        const productosSV = productos.filter(p => p.tags.includes('sanvalentin'));
+        gridSanValentin.innerHTML = productosSV.map(p => htmlTarjeta(p, "tag-sanvalentin tag-todos")).join('');
+        if (typeof iniciarFiltros === 'function') iniciarFiltros();
     }
 
-    // Lógica Catálogo
-    if (grid) {
-        grid.innerHTML = "";
-        productos.forEach(prod => {
-            // Convertimos las etiquetas limpias en clases
-            const clasesTags = prod.tags.split(',')
-                .map(t => `tag-${t.trim()}`)
-                .join(' ');
-
-            // Agregamos tag-todos para que el primer botón siempre funcione
-            grid.innerHTML += htmlTarjeta(prod, `${clasesTags} tag-todos`);
+    // 2. Lógica para Catálogo General (Excluye fúnebres y decoración)
+    if (gridCatalogo) {
+        const productosCat = productos.filter(p => {
+            const tags = p.tags.split(',').map(t => t.trim().toLowerCase());
+            return !tags.some(tag => tagsExcluidos.includes(tag));
         });
-        iniciarFiltros();
+        gridCatalogo.innerHTML = productosCat.map(p => htmlTarjeta(p, "tag-todos")).join('');
+        if (typeof iniciarFiltros === 'function') iniciarFiltros();
+    }
+
+    // 3. Lógica para Decoraciones (Solo fúnebres, globos, decoración)
+    if (gridDecoraciones) {
+        const productosDecor = productos.filter(p => {
+            const tags = p.tags.split(',').map(t => t.trim().toLowerCase());
+            return tags.some(tag => tagsExcluidos.includes(tag));
+        });
+        gridDecoraciones.innerHTML = productosDecor.map(p => htmlTarjeta(p, "tag-todos")).join('');
+        if (typeof iniciarFiltros === 'function') iniciarFiltros();
+    }
+
+    // 4. Home
+    if (home) {
+        home.innerHTML = productos.slice(0, 8).map(p => htmlTarjeta(p, "")).join('');
     }
 }
 
@@ -110,70 +204,94 @@ function iniciarFiltros() {
     const botones = document.querySelectorAll('.filter-btn');
     
     botones.forEach(btn => {
-        // Clonamos el nodo para eliminar listeners viejos (limpieza de memoria)
         const nuevoBtn = btn.cloneNode(true);
         btn.parentNode.replaceChild(nuevoBtn, btn);
         
         nuevoBtn.addEventListener('click', (e) => {
             const filtroClic = e.target.getAttribute('data-filter');
             
-            // CASO A: Clic en "Ver Todo"
             if (filtroClic === 'todos') {
-                // Apagar todos los demás
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                 e.target.classList.add('active');
-            } 
-            // CASO B: Clic en cualquier otro filtro
-            else {
-                // 1. Apagar "Ver Todo" si está encendido
+            } else {
                 const btnTodos = document.querySelector('.filter-btn[data-filter="todos"]');
                 if (btnTodos) btnTodos.classList.remove('active');
-
-                // 2. Toggle (Prender/Apagar) el botón clicado
-                e.target.classList.toggle('active');
-
-                // 3. Si no queda ninguno activo, volvemos a encender "Ver Todo"
-                const hayActivos = document.querySelectorAll('.filter-btn.active').length > 0;
-                if (!hayActivos && btnTodos) {
-                    btnTodos.classList.add('active');
+                
+                // Comportamiento Toggle (Prender/Apagar)
+                // Si ya estaba activo, lo quitamos (salvo que sea el único)
+                if (e.target.classList.contains('active')) {
+                     e.target.classList.remove('active');
+                } else {
+                     e.target.classList.add('active');
                 }
+                
+                const hayActivos = document.querySelectorAll('.filter-btn.active').length > 0;
+                if (!hayActivos && btnTodos) btnTodos.classList.add('active');
             }
-
-            // 4. Ejecutar el filtrado con TODOS los botones que quedaron activos
             aplicarFiltrosCombinados();
         });
     });
+
+    // --- NUEVO: LEER URL Y ACTIVAR FILTRO ---
+    // Esto hace que si entras a catalogo.html?cat=amor, se active el botón Amor automáticamente
+    const params = new URLSearchParams(window.location.search);
+    const categoriaURL = params.get('cat');
+
+    if (categoriaURL) {
+        const btnObjetivo = document.querySelector(`.filter-btn[data-filter="${categoriaURL}"]`);
+        if (btnObjetivo) {
+            // Simulamos el click para activar toda la lógica
+            // Primero limpiamos 'todos' para que sea selección limpia
+            const btnTodos = document.querySelector('.filter-btn[data-filter="todos"]');
+            if (btnTodos) btnTodos.click(); // Reset
+            
+            // Clic al objetivo
+            btnObjetivo.click();
+        }
+    }
 }
 
 function aplicarFiltrosCombinados() {
     const tarjetas = document.querySelectorAll('.product-card');
-    
-    // 1. Obtener lista de filtros activos (Ej: ['amor', 'rosas'])
     const botonesActivos = document.querySelectorAll('.filter-btn.active');
     const filtrosActivos = Array.from(botonesActivos).map(btn => btn.getAttribute('data-filter'));
 
-    // 2. Filtrar
     tarjetas.forEach(card => {
-        // Si "todos" está activo, mostramos todo
         if (filtrosActivos.includes('todos')) {
             card.classList.remove('hidden');
             return;
         }
-
-        // Lógica AND: La tarjeta debe tener TODAS las clases activas
-        // Verificamos si la tarjeta cumple con CADA UNO de los filtros seleccionados
         const cumpleTodo = filtrosActivos.every(filtro => card.classList.contains(`tag-${filtro}`));
-
-        if (cumpleTodo) {
-            card.classList.remove('hidden');
-        } else {
-            card.classList.add('hidden');
-        }
+        if (cumpleTodo) card.classList.remove('hidden');
+        else card.classList.add('hidden');
     });
 }
 
-// Menú Social
+// LOGICA VISUAL (Menu, Animaciones) se mantienen...
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    if (menu) menu.classList.toggle('open');
+}
+document.querySelectorAll('.mobile-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        const menu = document.getElementById('mobileMenu');
+        if (menu) menu.classList.remove('open');
+    });
+});
 function toggleSocialMenu() {
     const popup = document.getElementById("socialPopup");
     if (popup) popup.classList.toggle("active");
 }
+
+// Animación Scroll (mismo código de antes)
+document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+});
