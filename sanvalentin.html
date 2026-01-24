@@ -3,30 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colección San Valentín | New Flowers</title>
+    <title>San Valentín Exclusive | New Flowers</title>
     
     <link rel="stylesheet" href="style/styles.css">
     
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Fondo general de la página SV */
+        .valentine-theme {
+            background: linear-gradient(to bottom, #fff0f5 0%, #ffffff 100%);
+            font-family: 'Lato', sans-serif;
+        }
+
+        /* 1. HERO SECTION ROJO Y ELEGANTE */
+        .sv-hero {
+            position: relative;
+            height: 70vh;
+            background: url('assets/200.png') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .sv-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(80, 0, 20, 0.85) 0%, rgba(216, 77, 127, 0.6) 100%);
+        }
+
+        .sv-content {
+            position: relative; z-index: 10; padding: 20px; animation: fadeInUp 1.2s ease;
+        }
+
+        /* Título Principal (Estilo Normal) */
+        .sv-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .hero-waves {
+            position: absolute; bottom: 0; left: 0; width: 100%; height: auto;
+        }
+
+        /* 2. CONTADOR REGRESIVO */
+        .countdown-container { margin-top: 40px; }
+        .count-label { font-size: 0.9rem; margin-bottom: 10px; opacity: 0.9; }
+        .countdown { display: flex; justify-content: center; gap: 15px; }
+        
+        .time-box {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 10px 15px;
+            border-radius: 8px;
+            min-width: 70px;
+        }
+        .time-box span {
+            display: block; font-size: 1.8rem; font-weight: 700; font-family: 'Playfair Display', serif;
+        }
+        .time-box small { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* 3. CATÁLOGO LUXURY (Contenedor) */
+        .sv-catalog-section {
+            padding: 40px 20px;
+            position: relative;
+            z-index: 5;
+            background-color: transparent;
+        }
+
+        .section-badge {
+            text-align: center; color: #b03a65; font-weight: bold; letter-spacing: 2px;
+            margin-bottom: 10px; text-transform: uppercase; font-size: 0.8rem;
+        }
+
+        .sv-catalog-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #500014;
+            margin-bottom: 50px;
+        }
+
+        /* NOTA: Se eliminó la sección 4 (Overrides de Tarjetas) para respetar el diseño original */
+
+        /* 5. ANIMACIÓN DE CORAZONES FLOTANTES */
+        .hearts-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 0; overflow: hidden;
+        }
+        .heart {
+            position: absolute; bottom: -100px; width: 20px; height: 20px;
+            background: rgba(255, 182, 193, 0.6);
+            transform: rotate(45deg);
+            animation: floatHeart 15s infinite linear;
+        }
+        .heart::before, .heart::after {
+            content: ""; position: absolute; width: 20px; height: 20px;
+            background: inherit; border-radius: 50%;
+        }
+        .heart::before { top: -10px; left: 0; }
+        .heart::after { top: 0; left: -10px; }
+
+        .x1 { left: 10%; animation-duration: 12s; opacity: 0.3; transform: scale(0.6) rotate(45deg); }
+        .x2 { left: 30%; animation-duration: 18s; opacity: 0.5; transform: scale(1) rotate(45deg); }
+        .x3 { left: 70%; animation-duration: 14s; opacity: 0.4; transform: scale(0.8) rotate(45deg); }
+        .x4 { left: 90%; animation-duration: 20s; opacity: 0.3; transform: scale(1.2) rotate(45deg); }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(0) rotate(45deg) scale(1); opacity: 0; }
+            20% { opacity: 0.6; }
+            100% { transform: translateY(-120vh) rotate(45deg) scale(1); opacity: 0; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .sv-title { font-size: 3rem; }
+            .sv-hero { height: 85vh; }
+            .countdown { gap: 8px; }
+            .time-box { min-width: 55px; padding: 8px; }
+            .time-box span { font-size: 1.4rem; }
+        }
+    </style>
 </head>
-<body>
+<body class="valentine-theme">
 
     <nav class="navbar">
         <div class="nav-content-original">
-            <button class="hamburger-btn-original" onclick="toggleMobileMenu()" style="background:none; border:none; cursor:pointer; padding:0;">
-                <i class="ph ph-list icon" aria-label="Abrir menú"></i>
-            </button>
-            
-            <a href="index.html">
-                <img src="no-productos/logo.webp" alt="New Flowers Logo" class="logo-img">
-            </a>
-            
+            <button class="hamburger-btn-original" onclick="toggleMobileMenu()"><i class="ph ph-list icon"></i></button>
+            <a href="index.html"><img src="no-productos/logo.webp" alt="New Flowers Logo" class="logo-img"></a>
             <div class="social-widget">
-                <button class="social-toggle" aria-label="Ver redes sociales" onclick="toggleSocialMenu()">
-                    <img src="no-productos/icono-redes.svg" alt="Social" class="icon-img">
-                </button>
-
+                <button class="social-toggle" onclick="toggleSocialMenu()"><img src="no-productos/icono-redes.svg" alt="Social" class="icon-img"></button>
                 <div class="social-popup" id="socialPopup">
                     <a href="https://www.instagram.com/78newflowers/" target="_blank" class="social-item instagram"><i class="ph ph-instagram-logo"></i></a>
                     <a href="https://www.facebook.com/NewFlowers78" target="_blank" class="social-item facebook"><i class="ph ph-facebook-logo"></i></a>
@@ -41,69 +159,87 @@
         <div class="mobile-links">
             <a href="index.html">🏠 Inicio</a>
             <a href="catalogo.html">💐 Catálogo</a>
-            <a href="sanvalentin.html">❤️ San Valentín</a>
+            <a href="sanvalentin.html" class="active" style="color:#d4af37;">❤️ San Valentín</a>
             <a href="eventos.html">🎈 Decoraciones</a>
-            <a href="index.html#ubicaciones">📍 Nosotros</a>
+            <a href="index.html#ubicaciones">📍 Ubicaciones</a>
         </div>
     </div>
 
-    <section class="section-header catalog-header">
-        <h2 class="magic-title">San Valentín</h2>
-        <p style="margin-top: 15px; color: #666;">Expresa tu amor con el detalle perfecto.</p>
-    </section>
+    <header class="sv-hero">
+        <div class="sv-overlay"></div>
+        <div class="sv-content">
+            <h1 class="sv-title">Amor Eterno</h1>
+            <p>Diseños exclusivos para historias inolvidables.</p>
+            
+            <div class="countdown-container">
+                <p class="count-label">Faltan para el 14 de Febrero:</p>
+                <div id="countdown" class="countdown">
+                    <div class="time-box"><span id="days">00</span><small>Días</small></div>
+                    <div class="time-box"><span id="hours">00</span><small>Hs</small></div>
+                    <div class="time-box"><span id="minutes">00</span><small>Min</small></div>
+                    <div class="time-box"><span id="seconds">00</span><small>Seg</small></div>
+                </div>
+            </div>
+        </div>
+        <svg class="hero-waves" viewBox="0 0 1440 320">
+            <path fill="#fff0f5" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,261.3C960,256,1056,224,1152,197.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </header>
 
-    <main class="products-section">
+    <div class="hearts-bg">
+        <div class="heart x1"></div>
+        <div class="heart x2"></div>
+        <div class="heart x3"></div>
+        <div class="heart x4"></div>
+    </div>
+
+    <main class="sv-catalog-section">
+        <div class="section-badge">✨ Edición Especial ✨</div>
+        <h2 class="sv-catalog-title">Elige tu Detalle Perfecto</h2>
+        
         <div class="products-grid" id="grid-sanvalentin">
             </div>
     </main>
-
-    <div style="text-align: center; margin: 60px 0;">
-        <a href="catalogo.html" class="link-condolencias">
-            💐 Ver el catálogo completo
-        </a>
-    </div>
 
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-col">
                 <h3 class="footer-logo">New Flowers</h3>
-                <p class="footer-text">Arreglos florales y detalles personalizados en Ficoa. Sorprende con elegancia.</p>
+                <p class="footer-text">Donde las flores cuentan historias de amor.</p>
             </div>
             <div class="footer-col">
                 <h3>Explorar</h3>
                 <ul class="footer-links">
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="catalogo.html">Catálogo</a></li>
-                    <li><a href="sanvalentin.html">San Valentín</a></li>
                     <li><a href="eventos.html">Decoraciones</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h3>Nuestros Locales</h3>
-                <div class="location-item">
-                    <span class="loc-name">Local 1 (Matriz)</span>
-                    <p class="footer-text"><i class="ph ph-map-pin"></i> Ficoa, Av. Los Guaytambos</p>
-                </div>
-                <div class="location-item">
-                    <span class="loc-name">Local 2</span>
-                    <p class="footer-text"><i class="ph ph-storefront"></i> Av. Los Guaytambos (Las Palmas)</p>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h3>Contacto</h3>
+                <h3>Contacto VIP</h3>
                 <p class="footer-text"><i class="ph ph-whatsapp-logo"></i> 099 703 5437</p>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/78newflowers/" target="_blank"><i class="ph ph-instagram-logo"></i></a>
-                    <a href="https://www.tiktok.com/@newflowers_78" target="_blank"><i class="ph ph-tiktok-logo"></i></a>
-                    <a href="https://wa.me/593997035437" target="_blank"><i class="ph ph-whatsapp-logo"></i></a>
-                </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2026 New Flowers Ambato.</p>
-        </div>
+        <div class="footer-bottom"><p>© 2026 New Flowers Ambato.</p></div>
     </footer>
 
     <script src="script/script.js"></script>
+    <script>
+        // Lógica del contador
+        const targetDate = new Date("Feb 14, 2026 00:00:00").getTime();
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown").innerHTML = "<div class='time-box' style='width:100%'>¡Feliz San Valentín!</div>";
+                return;
+            }
+            document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+            document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+        }, 1000);
+    </script>
 </body>
 </html>
