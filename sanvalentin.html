@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colección San Valentín | New Flowers</title>
+    
+    <link rel="stylesheet" href="style/styles.css">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-content-original">
+            <button class="hamburger-btn-original" onclick="toggleMobileMenu()" style="background:none; border:none; cursor:pointer; padding:0;">
+                <i class="ph ph-list icon" aria-label="Abrir menú"></i>
+            </button>
+            
+            <a href="index.html">
+                <img src="no-productos/logo.webp" alt="New Flowers Logo" class="logo-img">
+            </a>
+            
+            <div class="social-widget">
+                <button class="social-toggle" aria-label="Ver redes sociales" onclick="toggleSocialMenu()">
+                    <img src="no-productos/icono-redes.svg" alt="Social" class="icon-img">
+                </button>
+
+                <div class="social-popup" id="socialPopup">
+                    <a href="https://www.instagram.com/78newflowers/" target="_blank" class="social-item instagram"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="https://www.facebook.com/NewFlowers78" target="_blank" class="social-item facebook"><i class="ph ph-facebook-logo"></i></a>
+                    <a href="https://www.tiktok.com/@newflowers_78" target="_blank" class="social-item tiktok"><i class="ph ph-tiktok-logo"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <button class="close-btn" onclick="toggleMobileMenu()"><i class="ph ph-x"></i></button>
+        <div class="mobile-links">
+            <a href="index.html">🏠 Inicio</a>
+            <a href="catalogo.html">💐 Catálogo</a>
+            <a href="sanvalentin.html">❤️ San Valentín</a>
+            <a href="eventos.html">🎈 Decoraciones</a>
+            <a href="index.html#ubicaciones">📍 Nosotros</a>
+        </div>
+    </div>
+
+    <section class="section-header catalog-header">
+        <h2 class="magic-title">San Valentín</h2>
+        <p style="margin-top: 15px; color: #666;">Expresa tu amor con el detalle perfecto.</p>
+    </section>
+
+    <main class="products-section">
+        <div class="products-grid" id="grid-sanvalentin">
+            </div>
+    </main>
+
+    <div style="text-align: center; margin: 60px 0;">
+        <a href="catalogo.html" class="link-condolencias">
+            💐 Ver el catálogo completo
+        </a>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3 class="footer-logo">New Flowers</h3>
+                <p class="footer-text">Arreglos florales y detalles personalizados en Ficoa. Sorprende con elegancia.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Explorar</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="sanvalentin.html">San Valentín</a></li>
+                    <li><a href="eventos.html">Decoraciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Nuestros Locales</h3>
+                <div class="location-item">
+                    <span class="loc-name">Local 1 (Matriz)</span>
+                    <p class="footer-text"><i class="ph ph-map-pin"></i> Ficoa, Av. Los Guaytambos</p>
+                </div>
+                <div class="location-item">
+                    <span class="loc-name">Local 2</span>
+                    <p class="footer-text"><i class="ph ph-storefront"></i> Av. Los Guaytambos (Las Palmas)</p>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Contacto</h3>
+                <p class="footer-text"><i class="ph ph-whatsapp-logo"></i> 099 703 5437</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/78newflowers/" target="_blank"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="https://www.tiktok.com/@newflowers_78" target="_blank"><i class="ph ph-tiktok-logo"></i></a>
+                    <a href="https://wa.me/593997035437" target="_blank"><i class="ph ph-whatsapp-logo"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 New Flowers Ambato.</p>
+        </div>
+    </footer>
+
+    <script src="script/script.js"></script>
+</body>
+</html>
