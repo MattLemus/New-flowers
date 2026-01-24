@@ -731,3 +731,30 @@ body {
     transform: none !important;
     transition: none !important;
 }
+.image-container {
+    overflow: hidden !important;
+    /* Aseguramos que se respeten los bordes redondeados superiores de la tarjeta */
+    border-radius: 12px 12px 0 0; 
+    /* Posición relativa necesaria para contener la imagen absoluta si fuera el caso */
+    position: relative;
+}
+
+/* 2. Definimos la transición suave para la imagen */
+.product-img {
+    /* Habilitamos la transición (tiempo y suavizado) */
+    /* Usamos !important para vencer al parche de seguridad anterior */
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    /* Aseguramos que empiece en tamaño normal (escala 1) */
+    transform: scale(1) !important;
+    /* Opcional: mejora el rendimiento de la animación en móviles */
+    will-change: transform;
+}
+
+/* 3. El Activador del Zoom */
+/* Cuando el mouse pasa por encima de la tarjeta (.product-card:hover) O
+   cuando el dedo toca la tarjeta en móvil (.product-card:active)... */
+.product-card:hover .product-img,
+.product-card:active .product-img {
+    /* ...la imagen crece un 10% */
+    transform: scale(1.1) !important;
+}
