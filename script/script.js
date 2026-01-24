@@ -140,22 +140,25 @@ function procesarCSV(csv) {
 function renderizarWeb(productos) {
     const gridCatalogo = document.getElementById("grid-principal");
     const gridDecoraciones = document.getElementById("grid-decoraciones");
-    const gridSanValentin = document.getElementById("grid-sanvalentin"); // Nuevo selector
+    const gridSanValentin = document.getElementById("grid-sanvalentin");
     const home = document.getElementById("contenedor-productos");
 
-    const tagsExcluidos = ['condolencias', 'globos', 'decoracion'];
+    // CAMBIO AQUÍ: Agregamos 'sanvalentin' a la lista de lo que NO queremos en el catálogo general
+    const tagsExcluidos = ['condolencias', 'globos', 'decoracion', 'sanvalentin'];
 
-    // 1. Lógica para Página San Valentín (Solo lo que tenga el tag sanvalentin)
+    // 1. Lógica para Página San Valentín (Solo muestra productos con tag 'sanvalentin')
     if (gridSanValentin) {
-        const productosSV = productos.filter(p => p.tags.includes('sanvalentin'));
+        // Filtramos para que aparezcan SOLO los que tienen el tag exacto
+        const productosSV = productos.filter(p => p.tags.split(',').map(t => t.trim().toLowerCase()).includes('sanvalentin'));
         gridSanValentin.innerHTML = productosSV.map(p => htmlTarjeta(p, "tag-sanvalentin tag-todos")).join('');
         if (typeof iniciarFiltros === 'function') iniciarFiltros();
     }
 
-    // 2. Lógica para Catálogo General (Excluye fúnebres y decoración)
+    // 2. Lógica para Catálogo General (Excluye fúnebres, decoración Y AHORA San Valentín)
     if (gridCatalogo) {
         const productosCat = productos.filter(p => {
             const tags = p.tags.split(',').map(t => t.trim().toLowerCase());
+            // Si el producto tiene ALGUNO de los tags excluidos (incluyendo sanvalentin), se oculta.
             return !tags.some(tag => tagsExcluidos.includes(tag));
         });
         gridCatalogo.innerHTML = productosCat.map(p => htmlTarjeta(p, "tag-todos")).join('');
@@ -164,16 +167,20 @@ function renderizarWeb(productos) {
 
     // 3. Lógica para Decoraciones (Solo fúnebres, globos, decoración)
     if (gridDecoraciones) {
+        // Aquí NO incluimos San Valentín, solo mantenemos la lógica de eventos
+        const tagsDecoracion = ['condolencias', 'globos', 'decoracion'];
+        
         const productosDecor = productos.filter(p => {
             const tags = p.tags.split(',').map(t => t.trim().toLowerCase());
-            return tags.some(tag => tagsExcluidos.includes(tag));
+            return tags.some(tag => tagsDecoracion.includes(tag));
         });
         gridDecoraciones.innerHTML = productosDecor.map(p => htmlTarjeta(p, "tag-todos")).join('');
         if (typeof iniciarFiltros === 'function') iniciarFiltros();
     }
 
-    // 4. Home
+    // 4. Home (Primeros 8 productos, sin importar etiquetas, o puedes filtrarlos también si quieres)
     if (home) {
+        // Opcional: Si tampoco quieres que salgan en el Home, usa productosCat en vez de productos
         home.innerHTML = productos.slice(0, 8).map(p => htmlTarjeta(p, "")).join('');
     }
 }
