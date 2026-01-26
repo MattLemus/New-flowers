@@ -1,6 +1,4 @@
-/* =========================================
-   SCRIPT DEFINITIVO (CON AUTO-FILTRO URL)
-   ========================================= */
+
 
 const DATOS_CSV = `
 ID,FOTO REFERENCIAL,NOMBRE,PRECIO,CATEGORIA
@@ -90,13 +88,11 @@ precio-80,,Globo Elefante,,sanvalentin
 
 document.addEventListener("DOMContentLoaded", () => {
     try {
-        // En lugar de fetch, leemos la variable directa (0 segundos de espera)
         const inventario = procesarCSV(DATOS_CSV);
         renderizarWeb(inventario);
     } catch (error) {
         console.error("Error procesando datos:", error);
     }
-    // Iniciamos observadores
     iniciarObservadorEstaticos();
 });
 
@@ -110,12 +106,9 @@ function procesarCSV(csv) {
             const regexCSV = /,(?=(?:(?:[^"]*"){2})*[^"]*$)/;
             const cols = fila.split(regexCSV);
             
-            // VALIDACIÓN MEJORADA
             if (cols.length >= 1) {
                 const idRaw = cols[0].trim();
                 
-                // AQUÍ ESTÁ EL ARREGLO:
-                // Si el ID está vacío O si dice "id" (es el título), saltamos esta fila.
                 if (!idRaw || idRaw.toLowerCase() === 'id') continue;
 
                 let etiquetasRaw = cols[4] ? cols[4].replace(/"/g, '').toLowerCase().trim() : "todos";
@@ -143,31 +136,26 @@ function renderizarWeb(productos) {
     const gridSanValentin = document.getElementById("grid-sanvalentin");
     const home = document.getElementById("contenedor-productos");
 
-    // CAMBIO AQUÍ: Agregamos 'sanvalentin' a la lista de lo que NO queremos en el catálogo general
     const tagsExcluidos = ['condolencias', 'globos', 'decoracion', 'sanvalentin'];
 
-    // 1. Lógica para Página San Valentín (Solo muestra productos con tag 'sanvalentin')
     if (gridSanValentin) {
-        // Filtramos para que aparezcan SOLO los que tienen el tag exacto
+
         const productosSV = productos.filter(p => p.tags.split(',').map(t => t.trim().toLowerCase()).includes('sanvalentin'));
         gridSanValentin.innerHTML = productosSV.map(p => htmlTarjeta(p, "tag-sanvalentin tag-todos")).join('');
         if (typeof iniciarFiltros === 'function') iniciarFiltros();
     }
 
-    // 2. Lógica para Catálogo General (Excluye fúnebres, decoración Y AHORA San Valentín)
     if (gridCatalogo) {
         const productosCat = productos.filter(p => {
             const tags = p.tags.split(',').map(t => t.trim().toLowerCase());
-            // Si el producto tiene ALGUNO de los tags excluidos (incluyendo sanvalentin), se oculta.
             return !tags.some(tag => tagsExcluidos.includes(tag));
         });
         gridCatalogo.innerHTML = productosCat.map(p => htmlTarjeta(p, "tag-todos")).join('');
         if (typeof iniciarFiltros === 'function') iniciarFiltros();
     }
 
-    // 3. Lógica para Decoraciones (Solo fúnebres, globos, decoración)
     if (gridDecoraciones) {
-        // Aquí NO incluimos San Valentín, solo mantenemos la lógica de eventos
+
         const tagsDecoracion = ['condolencias', 'globos', 'decoracion'];
         
         const productosDecor = productos.filter(p => {
@@ -178,20 +166,24 @@ function renderizarWeb(productos) {
         if (typeof iniciarFiltros === 'function') iniciarFiltros();
     }
 
-    // 4. Home (Primeros 8 productos, sin importar etiquetas, o puedes filtrarlos también si quieres)
+
     if (home) {
-        // Opcional: Si tampoco quieres que salgan en el Home, usa productosCat en vez de productos
+
         home.innerHTML = productos.slice(0, 8).map(p => htmlTarjeta(p, "")).join('');
     }
 }
 
-function htmlTarjeta(prod, clases) {
+function htmlTarjeta(prod, clasesBase) {
     const precioDisplay = prod.precio > 0 ? `$${prod.precio.toFixed(2)}` : 'COTIZAR';
     const btnTexto = prod.precio > 0 ? "Pedir" : "Consultar";
     const clsBtn = prod.precio > 0 ? "" : "btn-cotizar"; 
     
+    const clasesTags = prod.tags.split(',').map(t => `tag-${t.trim()}`).join(' ');
+
+    const clasesFinales = `${clasesBase} ${clasesTags}`;
+
     return `
-        <article class="product-card ${clases}">
+        <article class="product-card ${clasesFinales}">
             <div class="image-container">
                 <img src="${prod.imagen}" class="product-img" loading="lazy" onerror="this.src='assets/placeholder.webp'">
             </div>
@@ -224,8 +216,6 @@ function iniciarFiltros() {
                 const btnTodos = document.querySelector('.filter-btn[data-filter="todos"]');
                 if (btnTodos) btnTodos.classList.remove('active');
                 
-                // Comportamiento Toggle (Prender/Apagar)
-                // Si ya estaba activo, lo quitamos (salvo que sea el único)
                 if (e.target.classList.contains('active')) {
                      e.target.classList.remove('active');
                 } else {
@@ -239,20 +229,16 @@ function iniciarFiltros() {
         });
     });
 
-    // --- NUEVO: LEER URL Y ACTIVAR FILTRO ---
-    // Esto hace que si entras a catalogo.html?cat=amor, se active el botón Amor automáticamente
     const params = new URLSearchParams(window.location.search);
     const categoriaURL = params.get('cat');
 
     if (categoriaURL) {
         const btnObjetivo = document.querySelector(`.filter-btn[data-filter="${categoriaURL}"]`);
         if (btnObjetivo) {
-            // Simulamos el click para activar toda la lógica
-            // Primero limpiamos 'todos' para que sea selección limpia
+
             const btnTodos = document.querySelector('.filter-btn[data-filter="todos"]');
-            if (btnTodos) btnTodos.click(); // Reset
+            if (btnTodos) btnTodos.click(); 
             
-            // Clic al objetivo
             btnObjetivo.click();
         }
     }
@@ -274,7 +260,6 @@ function aplicarFiltrosCombinados() {
     });
 }
 
-// LOGICA VISUAL (Menu, Animaciones) se mantienen...
 function toggleMobileMenu() {
     const menu = document.getElementById('mobileMenu');
     if (menu) menu.classList.toggle('open');
@@ -290,7 +275,6 @@ function toggleSocialMenu() {
     if (popup) popup.classList.toggle("active");
 }
 
-// Animación Scroll (mismo código de antes)
 document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
