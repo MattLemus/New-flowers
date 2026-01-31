@@ -649,7 +649,7 @@ body {
     /* Altura del banner */
     height: 550px; 
     /* REEMPLAZA ESTA URL POR TU IMAGEN ROMÁNTICA */
-    background-image: url('../assets/200.png'); 
+    background-image: url('../assets/200.webp'); 
     background-size: cover;
     background-position: center center;
     display: flex;
