@@ -3,9 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Floristería New Flowers en Ambato. Arreglos florales únicos y regalos personalizados en Ficoa.">
-    <title>New Flowers - Ambato</title>
+    <meta name="theme-color" content="#FFD1DC"> 
     
+    <title>Floristería en Ambato | New Flowers - Arreglos y Envíos a Domicilio</title>
+    <meta name="description" content="¿Buscas flores en Ambato? En New Flowers creamos arreglos únicos, ramos de rosas y regalos personalizados. Tiendas en Ficoa y Sur. ¡Entrega rápida!">
+    
+    <link rel="canonical" href="https://tudominio.com/index.html">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="New Flowers Ambato - Regala Emociones">
+    <meta property="og:description" content="Arreglos florales exclusivos y entrega a domicilio en Ambato. Mira nuestro catálogo.">
+    <meta property="og:image" content="https://tudominio.com/no-productos/herosection-2.webp"> 
+    <meta property="og:url" content="https://tudominio.com/">
+
     <link rel="stylesheet" href="style/styles.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,184 +29,208 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Florist",
+      "name": "New Flowers Ambato",
+      "image": "https://tudominio.com/no-productos/logo.webp",
+      "description": "Floristería en Ambato especializada en arreglos florales y regalos.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Los Guaytambos y Magnolias",
+        "addressLocality": "Ambato",
+        "addressRegion": "Tungurahua",
+        "addressCountry": "EC"
+      },
+      "telephone": "+593997035437",
+      "openingHours": "Mo-Sa 09:00-20:00",
+      "priceRange": "$$"
+    }
+    </script>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="nav-content-original">
-            <button class="hamburger-btn-original" onclick="toggleMobileMenu()" style="background:none; border:none; cursor:pointer; padding:0;">
-                <i class="ph ph-list icon" aria-label="Abrir menú"></i>
+            <button class="hamburger-btn-original" onclick="toggleMobileMenu()" aria-label="Abrir menú de navegación" style="background:none; border:none; cursor:pointer; padding:0;">
+                <i class="ph ph-list icon" aria-hidden="true"></i>
             </button>
             
-            <a href="index.html">
-                <img src="no-productos/logo.webp" alt="New Flowers Logo" class="logo-img">
-            </a>
+            <a href="index.html" aria-label="Ir al inicio">
+                <img src="no-productos/logo.webp" alt="Logotipo New Flowers Ambato" class="logo-img" width="150" height="50"> </a>
             
             <div class="social-widget">
                 <button class="social-toggle" aria-label="Ver redes sociales" onclick="toggleSocialMenu()">
-                    <img src="no-productos/icono-redes.svg" alt="Social" class="icon-img">
+                    <img src="no-productos/icono-redes.svg" alt="" class="icon-img" aria-hidden="true">
                 </button>
 
                 <div class="social-popup" id="socialPopup">
-                    <a href="https://www.instagram.com/78newflowers/" target="_blank" class="social-item instagram"><i class="ph ph-instagram-logo"></i></a>
-                    <a href="https://www.facebook.com/NewFlowers78" target="_blank" class="social-item facebook"><i class="ph ph-facebook-logo"></i></a>
-                    <a href="https://www.tiktok.com/@newflowers_78" target="_blank" class="social-item tiktok"><i class="ph ph-tiktok-logo"></i></a>
+                    <a href="https://www.instagram.com/78newflowers/" target="_blank" rel="noopener noreferrer" class="social-item instagram" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="https://www.facebook.com/NewFlowers78" target="_blank" rel="noopener noreferrer" class="social-item facebook" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+                    <a href="https://www.tiktok.com/@newflowers_78" target="_blank" rel="noopener noreferrer" class="social-item tiktok" aria-label="TikTok"><i class="ph ph-tiktok-logo"></i></a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <div class="mobile-menu-overlay" id="mobileMenu">
-        <button class="close-btn" onclick="toggleMobileMenu()"><i class="ph ph-x"></i></button>
+    <div class="mobile-menu-overlay" id="mobileMenu" aria-hidden="true">
+        <button class="close-btn" onclick="toggleMobileMenu()" aria-label="Cerrar menú"><i class="ph ph-x"></i></button>
         <div class="mobile-links">
             <a href="index.html" class="active">🏠 Inicio</a>
             <a href="catalogo.html">💐 Catálogo</a>
             <a href="sanvalentin.html">❤️ San Valentín</a>
             <a href="eventos.html">🎈 Decoraciones</a>
-            <a href="#ubicaciones" onclick="toggleMobileMenu()">📍Nosotros</a>
+            <a href="#ubicaciones" onclick="toggleMobileMenu()">📍 Nosotros</a>
         </div>
     </div>
 
-    <section class="hero reveal-on-scroll">
-        <img src="no-productos/herosection-2.webp" 
-            srcset="no-productos/herosection-2.webp 480w, no-productos/herosection-2.webp 1200w"
-            sizes="(max-width: 600px) 480px, 100vw"
-            alt="Arreglo floral" class="hero-bg" fetchpriority="high">
-        <div class="overlay"></div>
-        <div class="hero-content">
-            <h1>Regala Emociones Inolvidables</h1>
-            <p>Arreglos florales y detalles personalizados en Ficoa.</p>
-            <a href="catalogo.html" class="btn-primary">VER CATÁLOGO</a>
-        </div>
-    </section>
-
-    <section class="guarantees reveal-on-scroll">
-        <div class="guarantee-item">
-            <i class="ph ph-flower-tulip guarantee-icon"></i>
-            <h3>Flores Frescas</h3><p>Seleccionadas cada día</p>
-        </div>
-        <div class="guarantee-item">
-            <i class="ph ph-truck guarantee-icon"></i>
-            <h3>Envíos en Ambato</h3><p>Entrega rápida y segura</p>
-        </div>
-        <div class="guarantee-item">
-            <i class="ph ph-gift guarantee-icon"></i>
-            <h3>Detalles Únicos</h3><p>Diseños personalizados</p>
-        </div>
-        <div class="guarantee-item">
-            <i class="ph ph-shield-check guarantee-icon"></i>
-            <h3>Compra Segura</h3><p>100% Confianza</p>
-        </div>
-    </section>
-
-    <section class="products-section reveal-on-scroll" id="catalogo">
-        <div class="section-header">
-            <h2 class="magic-title">Más vendidos</h2>
-            <p>Los arreglos más populares en Ambato</p>
-        </div>
-        <div class="products-grid" id="contenedor-productos"></div>
-    </section>
-
-    <section class="banner-sv reveal-on-scroll">
-        <div class="overlay-sv"></div>
-        <div class="banner-sv-content">
-            <h2>Colección San Valentín</h2>
-            <p>Encuentra el detalle perfecto para expresar tu amor.</p>
-            <a href="sanvalentin.html" class="btn-primary btn-sv">VER COLECCIÓN</a>
-        </div>
-    </section>
-
-    <section class="categories-section reveal-on-scroll">
-        <div class="section-header">
-            <h2 class="magic-title">Busca por Ocasión</h2>
-            <p>Dinos qué celebras y te diremos qué regalar</p>
-        </div>
-        <div class="categories-grid">
-            <a href="catalogo.html?cat=amor" class="category-card">
-                <img src="no-productos/amor-portadaa.webp" alt="Amor" class="cat-img" loading="lazy">
-                <div class="cat-overlay"><h3>Amor & Aniversario</h3><span class="btn-text">Ver opciones <i class="ph ph-arrow-right"></i></span></div>
-            </a>
-            <a href="catalogo.html?cat=cumpleanos" class="category-card">
-                <img src="no-productos/cumpleaños.webp" alt="Cumpleaños" class="cat-img" loading="lazy">
-                <div class="cat-overlay"><h3>Cumpleaños</h3><span class="btn-text">Ver opciones <i class="ph ph-arrow-right"></i></span></div>
-            </a>
-            <a href="eventos.html" class="category-card">
-                <img src="no-productos/condolencias.jpg" alt="Condolencias" class="cat-img" loading="lazy">
-                <div class="cat-overlay"><h3>Condolencias</h3><span class="btn-text">Ver opciones <i class="ph ph-arrow-right"></i></span></div>
-            </a>
-            <a href="catalogo.html?cat=caja" class="category-card">
-                <img src="no-productos/cajas.webp" alt="Cajas" class="cat-img" loading="lazy">
-                <div class="cat-overlay"><h3>Cajas & Detalles</h3><span class="btn-text">Ver opciones <i class="ph ph-arrow-right"></i></span></div>
-            </a>
-        </div>
-    </section>
-
-    <section class="locations-section reveal-on-scroll" id="ubicaciones">
-        <div class="section-header">
-            <h2 class="magic-title">Nuestros Locales</h2>
-            <p>Encuéntranos en Ficoa y Av. Víctor Hugo</p>
-        </div>
-        <div class="locations-grid">
-            <article class="location-card">
-                <div class="map-frame">
-                    <iframe title="Mapa Ficoa" src="https://maps.google.com/maps?q=New+Flowers+M%26D+Ficoa+Ambato&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-                <div class="location-details">
-                    <div class="icon-box"><i class="ph ph-flower-tulip"></i></div>
-                    <h3>NEW FLOWERS M&D (Ficoa)</h3>
-                    <p class="address"><i class="ph ph-map-pin"></i> Av. Los Guaytambos y Magnolias (Las Palmas)</p>
-                    <p class="schedule"><i class="ph ph-clock"></i> Lun - Sáb: 9:00 - 20:00</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=New+Flowers+M%26D+Ficoa" target="_blank" class="btn-location">Cómo llegar <i class="ph ph-arrow-right"></i></a>
-                </div>
-            </article>
-            <article class="location-card">
-                <div class="map-frame">
-                    <iframe title="Mapa Sur" src="https://maps.google.com/maps?q=New+Flowers+Avenida+Victor+Hugo+Ambato&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-                <div class="location-details">
-                    <div class="icon-box"><i class="ph ph-storefront"></i></div>
-                    <h3>New Flowers (Sur)</h3>
-                    <p class="address"><i class="ph ph-map-pin"></i> Av. Víctor Hugo</p>
-                    <p class="schedule"><i class="ph ph-clock"></i> Lun - Sáb: 8:00 - 19:00</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=New+Flowers+Avenida+Victor+Hugo+Ambato" target="_blank" class="btn-location">Cómo llegar <i class="ph ph-arrow-right"></i></a>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <section class="reviews-section reveal-on-scroll">
-        <div class="reviews-container">
-            <div class="review-summary">
-                <h3 style="color:white">Opinión de clientes</h3>
-                <div class="rating-big">
-                    <span class="score">5.0</span>
-                    <div class="stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
-                </div>
-                <p class="review-count">Basado en clientes felices</p>
-                <a href="https://wa.me/593997035437?text=Hola,%20quiero%20dejar%20mi%20opinión..." target="_blank" class="btn-review">Escribe una reseña</a>
+    <main>
+        <section class="hero reveal-on-scroll">
+            <img src="no-productos/herosection-2.webp" 
+                srcset="no-productos/herosection-2.webp 480w, no-productos/herosection-2.webp 1200w"
+                sizes="(max-width: 600px) 480px, 100vw"
+                alt="Hermoso arreglo floral de rosas en Ambato" 
+                class="hero-bg" 
+                fetchpriority="high">
+            <div class="overlay"></div>
+            <div class="hero-content">
+                <h1>Regala Emociones Inolvidables</h1>
+                <p>Arreglos florales y detalles personalizados en Ficoa.</p>
+                <a href="catalogo.html" class="btn-primary">VER CATÁLOGO</a>
             </div>
-            <div class="reviews-track">
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="user-avatar" style="background: #FFD1DC;">SM</div>
-                        <div class="user-info"><h4>Sofia Galarza</h4><span>Hace 1 mes</span></div>
-                        <i class="ph-fill ph-check-circle verified-icon"></i>
+        </section>
+
+        <section class="guarantees reveal-on-scroll">
+            <div class="guarantee-item">
+                <i class="ph ph-flower-tulip guarantee-icon" aria-hidden="true"></i>
+                <h3>Flores Frescas</h3><p>Seleccionadas cada día</p>
+            </div>
+            <div class="guarantee-item">
+                <i class="ph ph-truck guarantee-icon" aria-hidden="true"></i>
+                <h3>Envíos en Ambato</h3><p>Entrega rápida y segura</p>
+            </div>
+            <div class="guarantee-item">
+                <i class="ph ph-gift guarantee-icon" aria-hidden="true"></i>
+                <h3>Detalles Únicos</h3><p>Diseños personalizados</p>
+            </div>
+            <div class="guarantee-item">
+                <i class="ph ph-shield-check guarantee-icon" aria-hidden="true"></i>
+                <h3>Compra Segura</h3><p>100% Confianza</p>
+            </div>
+        </section>
+
+        <section class="products-section reveal-on-scroll" id="catalogo">
+            <div class="section-header">
+                <h2 class="magic-title">Más vendidos</h2>
+                <p>Los arreglos más populares en Ambato</p>
+            </div>
+            <div class="products-grid" id="contenedor-productos"></div> 
+            <noscript><p>Por favor habilita JavaScript para ver nuestro catálogo.</p></noscript>
+        </section>
+
+        <section class="banner-sv reveal-on-scroll">
+            <div class="overlay-sv"></div>
+            <div class="banner-sv-content">
+                <h2>Colección San Valentín</h2>
+                <p>Encuentra el detalle perfecto para expresar tu amor.</p>
+                <a href="sanvalentin.html" class="btn-primary btn-sv">VER COLECCIÓN</a>
+            </div>
+        </section>
+
+        <section class="categories-section reveal-on-scroll">
+            <div class="section-header">
+                <h2 class="magic-title">Busca por Ocasión</h2>
+                <p>Dinos qué celebras y te diremos qué regalar</p>
+            </div>
+            <div class="categories-grid">
+                <a href="catalogo.html?cat=amor" class="category-card">
+                    <img src="no-productos/amor-portadaa.webp" alt="Ramos de flores para amor y aniversario" class="cat-img" loading="lazy">
+                    <div class="cat-overlay"><h3>Amor & Aniversario</h3><span class="btn-text">Ver opciones <i class="ph ph-arrow-right"></i></span></div>
+                </a>
+                <a href="catalogo.html?cat=cumpleanos" class="category-card">
+                    <img src="no-productos/cumpleaños.webp" alt="Arreglos florales de cumpleaños" class="cat-img" loading="lazy">
+                    <div class="cat-overlay"><h3>Cumpleaños</h3><span class="btn-text">Ver opciones <i class="ph ph-arrow-right"></i></span></div>
+                </a>
+                <a href="eventos.html" class="category-card">
+                    <img src="no-productos/condolencias.jpg" alt="Arreglos fúnebres y condolencias" class="cat-img" loading="lazy">
+                    <div class="cat-overlay"><h3>Condolencias</h3><span class="btn-text">Ver opciones <i class="ph ph-arrow-right"></i></span></div>
+                </a>
+                <a href="catalogo.html?cat=caja" class="category-card">
+                    <img src="no-productos/cajas.webp" alt="Cajas de rosas y detalles" class="cat-img" loading="lazy">
+                    <div class="cat-overlay"><h3>Cajas & Detalles</h3><span class="btn-text">Ver opciones <i class="ph ph-arrow-right"></i></span></div>
+                </a>
+            </div>
+        </section>
+
+        <section class="locations-section reveal-on-scroll" id="ubicaciones">
+            <div class="section-header">
+                <h2 class="magic-title">Nuestros Locales</h2>
+                <p>Encuéntranos en Ficoa y Av. Víctor Hugo</p>
+            </div>
+            <div class="locations-grid">
+                <article class="location-card">
+                    <div class="map-frame">
+                        <iframe title="Mapa Ubicación Ficoa" src="https://maps.google.com/maps?q=New+Flowers+M%26D+Ficoa+Ambato&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
-                    <div class="stars-small"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
-                    <p class="review-text">"Vivo en Quito y quería sorprender a mi mamá en Ambato. Todo llegó perfecto y a tiempo."</p>
+                    <div class="location-details">
+                        <div class="icon-box"><i class="ph ph-flower-tulip"></i></div>
+                        <h3>NEW FLOWERS M&D (Ficoa)</h3>
+                        <p class="address"><i class="ph ph-map-pin"></i> Av. Los Guaytambos y Magnolias (Las Palmas)</p>
+                        <p class="schedule"><i class="ph ph-clock"></i> Lun - Sáb: 9:00 - 20:00</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=New+Flowers+M%26D+Ficoa" target="_blank" rel="noopener noreferrer" class="btn-location">Cómo llegar <i class="ph ph-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="location-card">
+                    <div class="map-frame">
+                        <iframe title="Mapa Ubicación Sur" src="https://maps.google.com/maps?q=New+Flowers+Avenida+Victor+Hugo+Ambato&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="location-details">
+                        <div class="icon-box"><i class="ph ph-storefront"></i></div>
+                        <h3>New Flowers (Sur)</h3>
+                        <p class="address"><i class="ph ph-map-pin"></i> Av. Víctor Hugo</p>
+                        <p class="schedule"><i class="ph ph-clock"></i> Lun - Sáb: 8:00 - 19:00</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=New+Flowers+Avenida+Victor+Hugo+Ambato" target="_blank" rel="noopener noreferrer" class="btn-location">Cómo llegar <i class="ph ph-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="reviews-section reveal-on-scroll">
+            <div class="reviews-container">
+                <div class="review-summary">
+                    <h3 style="color:white">Opinión de clientes</h3>
+                    <div class="rating-big">
+                        <span class="score">5.0</span>
+                        <div class="stars" aria-label="5 estrellas"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+                    </div>
+                    <p class="review-count">Basado en clientes felices</p>
+                    <a href="https://wa.me/593997035437?text=Hola,%20quiero%20dejar%20mi%20opinión..." target="_blank" rel="noopener noreferrer" class="btn-review">Escribe una reseña</a>
                 </div>
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="user-avatar" style="background: #E0F7FA;">PM</div>
-                        <div class="user-info"><h4>Emilia mayorga</h4><span>Hace 2 semanas</span></div>
-                        <i class="ph-fill ph-check-circle verified-icon"></i>
+                <div class="reviews-track">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="user-avatar" style="background: #FFD1DC;">SM</div>
+                            <div class="user-info"><h4>Sofia Galarza</h4><span>Hace 1 mes</span></div>
+                            <i class="ph-fill ph-check-circle verified-icon" aria-label="Compra verificada"></i>
+                        </div>
+                        <div class="stars-small"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+                        <p class="review-text">"Vivo en Quito y quería sorprender a mi mamá en Ambato. Todo llegó perfecto y a tiempo."</p>
                     </div>
-                    <div class="stars-small"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
-                    <p class="review-text">"Excelente servicio 100% recomendado. Las flores llegaron fresquitas."</p>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="user-avatar" style="background: #E0F7FA;">PM</div>
+                            <div class="user-info"><h4>Emilia mayorga</h4><span>Hace 2 semanas</span></div>
+                            <i class="ph-fill ph-check-circle verified-icon" aria-label="Compra verificada"></i>
+                        </div>
+                        <div class="stars-small"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+                        <p class="review-text">"Excelente servicio 100% recomendado. Las flores llegaron fresquitas."</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="site-footer">
         <div class="footer-container">
@@ -203,7 +243,8 @@
                 <ul class="footer-links">
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="catalogo.html">Catálogo</a></li>
-                    <li><a href="sanvalentin.html">San Valentín</a></li> <li><a href="eventos.html">Decoraciones</a></li>
+                    <li><a href="sanvalentin.html">San Valentín</a></li> 
+                    <li><a href="eventos.html">Decoraciones</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -221,9 +262,9 @@
                 <h3>Contacto</h3>
                 <p class="footer-text"><i class="ph ph-whatsapp-logo"></i> 099 703 5437</p>
                 <div class="social-links">
-                    <a href="https://www.instagram.com/78newflowers/" target="_blank"><i class="ph ph-instagram-logo"></i></a>
-                    <a href="https://www.tiktok.com/@newflowers_78" target="_blank"><i class="ph ph-tiktok-logo"></i></a>
-                    <a href="https://wa.me/593997035437" target="_blank"><i class="ph ph-whatsapp-logo"></i></a>
+                    <a href="https://www.instagram.com/78newflowers/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="https://www.tiktok.com/@newflowers_78" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="ph ph-tiktok-logo"></i></a>
+                    <a href="https://wa.me/593997035437" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="ph ph-whatsapp-logo"></i></a>
                 </div>
             </div>
         </div>

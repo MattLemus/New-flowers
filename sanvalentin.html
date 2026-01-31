@@ -3,7 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#d4af37">
     <title>San Valentín Exclusive | New Flowers</title>
+    <meta name="description" content="Colección exclusiva de San Valentín en Ambato. Ramos de rosas y arreglos románticos.">
+    
+    <link rel="canonical" href="https://tudominio.com/sanvalentin.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="San Valentín en New Flowers Ambato ❤️">
+    <meta property="og:description" content="Sorprende a tu pareja con nuestros diseños exclusivos.">
+    <meta property="og:image" content="https://tudominio.com/assets/200.png">
+    <meta property="og:url" content="https://tudominio.com/sanvalentin.html">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
     
     <link rel="stylesheet" href="style/styles.css">
     
@@ -11,13 +26,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Fondo general de la página SV */
         .valentine-theme {
             background: linear-gradient(to bottom, #fff0f5 0%, #ffffff 100%);
             font-family: 'Lato', sans-serif;
         }
 
-        /* 1. HERO SECTION ROJO Y ELEGANTE */
         .sv-hero {
             position: relative;
             height: 70vh;
@@ -39,7 +52,6 @@
             position: relative; z-index: 10; padding: 20px; animation: fadeInUp 1.2s ease;
         }
 
-        /* Título Principal (Estilo Normal) */
         .sv-title {
             font-family: 'Playfair Display', serif;
             font-size: 4rem;
@@ -53,7 +65,6 @@
             position: absolute; bottom: 0; left: 0; width: 100%; height: auto;
         }
 
-        /* 2. CONTADOR REGRESIVO */
         .countdown-container { margin-top: 40px; }
         .count-label { font-size: 0.9rem; margin-bottom: 10px; opacity: 0.9; }
         .countdown { display: flex; justify-content: center; gap: 15px; }
@@ -71,7 +82,6 @@
         }
         .time-box small { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* 3. CATÁLOGO LUXURY (Contenedor) */
         .sv-catalog-section {
             padding: 40px 20px;
             position: relative;
@@ -92,9 +102,6 @@
             margin-bottom: 50px;
         }
 
-        /* NOTA: Se eliminó la sección 4 (Overrides de Tarjetas) para respetar el diseño original */
-
-        /* 5. ANIMACIÓN DE CORAZONES FLOTANTES */
         .hearts-bg {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             pointer-events: none; z-index: 0; overflow: hidden;
@@ -146,9 +153,9 @@
             <div class="social-widget">
                 <button class="social-toggle" onclick="toggleSocialMenu()"><img src="no-productos/icono-redes.svg" alt="Social" class="icon-img"></button>
                 <div class="social-popup" id="socialPopup">
-                    <a href="https://www.instagram.com/78newflowers/" target="_blank" class="social-item instagram"><i class="ph ph-instagram-logo"></i></a>
-                    <a href="https://www.facebook.com/NewFlowers78" target="_blank" class="social-item facebook"><i class="ph ph-facebook-logo"></i></a>
-                    <a href="https://www.tiktok.com/@newflowers_78" target="_blank" class="social-item tiktok"><i class="ph ph-tiktok-logo"></i></a>
+                    <a href="https://www.instagram.com/78newflowers/" target="_blank" rel="noopener noreferrer" class="social-item instagram"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="https://www.facebook.com/NewFlowers78" target="_blank" rel="noopener noreferrer" class="social-item facebook"><i class="ph ph-facebook-logo"></i></a>
+                    <a href="https://www.tiktok.com/@newflowers_78" target="_blank" rel="noopener noreferrer" class="social-item tiktok"><i class="ph ph-tiktok-logo"></i></a>
                 </div>
             </div>
         </div>
@@ -161,7 +168,7 @@
             <a href="catalogo.html">💐 Catálogo</a>
             <a href="sanvalentin.html" class="active" style="color:#d4af37;">❤️ San Valentín</a>
             <a href="eventos.html">🎈 Decoraciones</a>
-            <a href="index.html#ubicaciones">📍Nosotros</a>
+            <a href="index.html#ubicaciones">📍 Nosotros</a>
         </div>
     </div>
 
@@ -196,9 +203,8 @@
     <main class="sv-catalog-section">
         <div class="section-badge">✨ Edición Especial ✨</div>
         <h2 class="sv-catalog-title">Elige tu Detalle Perfecto</h2>
-        
-        <div class="products-grid" id="grid-sanvalentin">
-            </div>
+        <div class="products-grid" id="grid-sanvalentin" data-category="san-valentin">
+        </div>
     </main>
 
     <footer class="site-footer">
@@ -225,7 +231,6 @@
 
     <script src="script/script.js"></script>
     <script>
-        // Lógica del contador
         const targetDate = new Date("Feb 14, 2026 00:00:00").getTime();
         const timer = setInterval(function() {
             const now = new Date().getTime();
@@ -242,5 +247,4 @@
         }, 1000);
     </script>
 </body>
-
 </html>

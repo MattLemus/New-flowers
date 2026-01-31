@@ -3,8 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos y Decoraciones | New Flowers</title>
+    <meta name="theme-color" content="#FFD1DC">
+    
+    <title>Decoración de Eventos y Condolencias Ambato | New Flowers</title>
+    <meta name="description" content="Arreglos florales para eventos, decoración de espacios y coronas fúnebres en Ambato. Diseños elegantes y atención personalizada para cada ocasión.">
+    
+    <link rel="canonical" href="https://tudominio.com/eventos.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Decoraciones y Eventos - New Flowers Ambato">
+    <meta property="og:description" content="Desde momentos felices hasta despedidas solemnes. Mira nuestro catálogo de eventos.">
+    <meta property="og:image" content="https://tudominio.com/no-productos/condolencias.jpg"> <meta property="og:url" content="https://tudominio.com/eventos.html">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
     <link rel="stylesheet" href="style/styles.css">
+    
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
@@ -12,23 +29,23 @@
 
     <nav class="navbar">
         <div class="nav-content-original">
-            <button class="hamburger-btn-original" onclick="toggleMobileMenu()" style="background:none; border:none; cursor:pointer; padding:0;">
-                <i class="ph ph-list icon" aria-label="Abrir menú"></i>
+            <button class="hamburger-btn-original" onclick="toggleMobileMenu()" aria-label="Menú" style="background:none; border:none; cursor:pointer; padding:0;">
+                <i class="ph ph-list icon"></i>
             </button>
             
-            <a href="index.html">
+            <a href="index.html" aria-label="Inicio">
                 <img src="no-productos/logo.webp" alt="New Flowers Logo" class="logo-img">
             </a>
             
             <div class="social-widget">
-                <button class="social-toggle" aria-label="Ver redes sociales" onclick="toggleSocialMenu()">
+                <button class="social-toggle" onclick="toggleSocialMenu()" aria-label="Redes Sociales">
                     <img src="no-productos/icono-redes.svg" alt="Social" class="icon-img">
                 </button>
 
                 <div class="social-popup" id="socialPopup">
-                    <a href="https://www.instagram.com/78newflowers/" target="_blank" class="social-item instagram"><i class="ph ph-instagram-logo"></i></a>
-                    <a href="https://www.facebook.com/NewFlowers78" target="_blank" class="social-item facebook"><i class="ph ph-facebook-logo"></i></a>
-                    <a href="https://www.tiktok.com/@newflowers_78" target="_blank" class="social-item tiktok"><i class="ph ph-tiktok-logo"></i></a>
+                    <a href="https://www.instagram.com/78newflowers/" target="_blank" rel="noopener noreferrer" class="social-item instagram"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="https://www.facebook.com/NewFlowers78" target="_blank" rel="noopener noreferrer" class="social-item facebook"><i class="ph ph-facebook-logo"></i></a>
+                    <a href="https://www.tiktok.com/@newflowers_78" target="_blank" rel="noopener noreferrer" class="social-item tiktok"><i class="ph ph-tiktok-logo"></i></a>
                 </div>
             </div>
         </div>
@@ -40,7 +57,7 @@
             <a href="index.html">🏠 Inicio</a>
             <a href="catalogo.html">💐 Catálogo</a>
             <a href="sanvalentin.html">❤️ San Valentín</a>
-            <a href="eventos.html">🎈 Decoraciones</a>
+            <a href="eventos.html" class="active">🎈 Decoraciones</a>
             <a href="index.html#ubicaciones">📍 Nosotros</a>
         </div>
     </div>
@@ -92,9 +109,9 @@
                 <h3>Contacto</h3>
                 <p class="footer-text"><i class="ph ph-whatsapp-logo"></i> 099 703 5437</p>
                 <div class="social-links">
-                    <a href="https://www.instagram.com/78newflowers/" target="_blank"><i class="ph ph-instagram-logo"></i></a>
-                    <a href="https://www.tiktok.com/@newflowers_78" target="_blank"><i class="ph ph-tiktok-logo"></i></a>
-                    <a href="https://wa.me/593997035437" target="_blank"><i class="ph ph-whatsapp-logo"></i></a>
+                    <a href="https://www.instagram.com/78newflowers/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="https://www.tiktok.com/@newflowers_78" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="ph ph-tiktok-logo"></i></a>
+                    <a href="https://wa.me/593997035437" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="ph ph-whatsapp-logo"></i></a>
                 </div>
             </div>
         </div>
