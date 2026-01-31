@@ -8,80 +8,100 @@ precio-9,,Caja Corazón,25,"amor, caja, rosas"
 precio-69,,Caja Mixta Rosa,50,"caja, mix"
 precio-7,,Caja Corona Roja,50,"amor, caja, rosas"
 precio-68,,Caja Mixta Lila,25,"caja, mix"
-precio-67,,Buchón Rojo,0,"amor, rosas, ramo"
-precio-65,,Arco Globos,0,globos
+precio-67,,Buchón Rojo,50,"amor, rosas, ramo"
+precio-65,,Arco Globos,120,globos
 precio-64,,Conos Gerberas,4,"especiales, mix, ramo"
 precio-66,,Fresas con Globo,30,"amor, frutales, cumpleanos"
 precio-63,,Ramo Rosas Lila,35,"especiales, mix, ramo"
-precio-60,,Globos Techo,0,globos
+precio-60,,Globos Techo,75,globos
 precio-62,,Ramo Corazón,35,"especiales, mix, ramo"
 precio-6,,Caja Flores Globo,30,"cumpleanos, caja, mix"
-precio-61,,Fresas con Números,0,"amor, caja, rosas, frutales"
+precio-61,,Fresas con Números,35,"amor, caja, rosas, frutales"
 precio-58,,Caja Mixta Pastel,25,"especiales, mix, caja"
-precio-59,,Ramo Lirios Rosa,25,"especiales, ramo, mix"
+precio-59,,Lirios Mix,30,"especiales, ramo, mix"
 precio-57,,Caja Lirios Mix,30,"especiales, mix, caja"
-precio-55,,Desayuno con Flores,0,"caja, frutales, mix"
+precio-55,,Desayuno con Flores,25,"caja, frutales, mix"
 precio-56,,Caja Regalo Papá,25,"caja, cumpleanos"
 precio-54,,Caja Rosas Globo,35,"cumpleanos, mix, caja"
 precio-53,,Ramo Lirios Rosa,7,"especiales, ramo, mix"
-precio-52,,Corazón con Luces,0,"amor, rosas"
+precio-52,,Corazón con Luces,45,"amor, rosas"
 precio-50,,Caja Lirios Roja,60,"especiales, mix, amor"
-precio-51,,Corazón Ferrero,0,"amor, rosas"
+precio-51,,Corazón Ferrero,25,"amor, rosas"
 precio-5,,Caja Rosas Amarillas,25,"mix, caja"
 precio-44,,Ramo Hortensias Fucsia,25,"ramo, mix, amor"
 precio-48,,Caja Rosas Mariposa,25,"especiales, caja, mix"
-precio-49,,Ramo Rosas Pastel,0,"ramo, mix, amor"
+precio-49,,Ramo Rosas Pastel,30,"ramo, mix, amor"
 precio-46,,Caja Rosas Multicolor,30,"amor, caja, rosas"
-precio-47,,Caja con Rosas y Ferreros,0,"amor, caja, rosas"
-precio-43,,Ramo Corona Roja,0,"amor, ramo, rosas"
-precio-45,,Ramo Fresas,0,"amor, frutales, ramo"
-precio-42,,Ramo Propuesta,0,"amor, rosas, ramo"
+precio-47,,Caja con Rosas y Ferreros,70,"amor, caja, rosas"
+precio-43,,Ramo Corona Roja,30,"amor, ramo, rosas"
+precio-45,,Ramo Fresas,30,"amor, frutales, ramo"
+precio-42,,Ramo Propuesta,30,"amor, rosas, ramo"
 precio-41,,Caja Globo Pastel,35,"caja, mix"
-precio-39,,Caja Lila Mix,0,"caja, mix, amor"
+precio-39,,Caja Lila Mix,25,"caja, mix, amor"
 precio-4,,Ramo Snoopy,40,"ramo, mix, cumpleanos"
 precio-40,,Ramo Oso Rosa,35,"amor, ramo"
 precio-35,,Caja Azul Mini,20,"mix, caja"
-precio-38,,Ramo Cono Rosa,0,"ramo, mix, amor"
+precio-38,,Ramo Cono Rosa,30,"ramo, mix, amor"
 precio-37,,Ramillete Gerbera,5,"mix, ramo"
 precio-36,,Trio Globos Pastel,45,"caja, mix, cumpleanos"
 precio-33,,Globo Burbuja Lila,40,"caja, rosas, cumpleanos"
 precio-34,,Lirios en Caja,35,"caja, mix, amor"
 precio-32,,Bolso Floral,15,"mix, caja, amor"
-precio-29,,Box Graduación,0,"caja, mix, cumpleanos"
+precio-29,,Box Graduación,40,"caja, mix, cumpleanos"
 precio-31,,Cilindro Azul Mix,25,"caja, rosas, amor"
-precio-30,,Buchón Girasol,0,"ramo, rosas, amor"
-precio-3,,Ramo Hot Wheels,20,"ramo, mix"
+precio-30,,Buchón Girasol,45,"ramo, rosas, amor"
+precio-3,,Ramo Hot Wheels,25,"ramo, mix"
 precio-28,,Caja Estrella Rosa,25,"caja, mix, cumpleanos"
-precio-27,,Ramo Lirios Rosas,20,"ramo, mix"
+precio-27,,Bouquet Lirios,20,"ramo, mix"
 precio-25,,Corazón Pedestal Bicolor,70,condolencias
 precio-26,,Parante Lirios,70,condolencias
 precio-24,,Corazón Pedestal Girasol,60,condolencias
 precio-23,,Parante Lágrima,70,condolencias
-precio-14,,Caja Oso Lirios,0,"caja, mix, amor"
-precio-12,,Ramo Corazón Gigante,0,"ramo, rosas, amor"
-precio-11,,Ramo Naranja Mix,0,"ramo, mix"
+precio-14,,Caja Oso Lirios,45,"caja, mix, amor"
+precio-12,,Ramo Corazón Gigante,70,"ramo, rosas, amor"
+precio-11,,Ramo Naranja Mix,20,"ramo, mix"
 precio-16,,Ramo Corona Mix,25,"ramo, mix, amor, cumpleanos"
 precio-2,,Caja Rosas Dos Tonos,25,"caja, rosas"
 precio-22,,Corazón Blanco,70,condolencias
 precio-21,,Lazo Floral,70,condolencias
 precio-18,,Corazón Kinder,40,"amor, rosas"
 precio-10,,Caja Stitch,45,"cumpleanos, caja, mix"
-precio-19,,Ramo Rojo Girasol,0,"ramo, rosas, mix"
-precio-20,,Bolso Fresas,25,"frutales, caja"
+precio-19,,Ramo Rojo Girasol,25,"ramo, rosas, mix"
+precio-20,,Bolso Fresas,20,"frutales, caja"
 precio-17,,Corazón Bicolor Ferrero,50,"amor, caja, rosas"
 precio-15,,Caja Sulley,30,"rosas, caja, amor"
 precio-13,,Ramo Estrella,30,"mix, ramo"
 precio-1,,Caja Lotso,50,"amor, caja, mix"
-precio-71,,Arreglo Fúnebre,0,condolencias
-precio-72,,Ramo Pastel,0,sanvalentin
-precio-73,,Ramo Ferrero,,sanvalentin
-precio-74,,Ramo Lila,,sanvalentin
-precio-75,,Ramo Corazón,,sanvalentin
-precio-76,,Corazón Ferrero,,sanvalentin
-precio-77,,Caja Cumpleaños,,sanvalentin
-precio-78,,Caja Amor,,sanvalentin
-precio-79,,Globo Rosas,,sanvalentin
-precio-80,,Globo Elefante,,sanvalentin
+precio-71,,Arreglo Fúnebre,,condolencias
+precio-72,,Ramo Pastel,30,sanvalentin
+precio-73,,Ramo Ferrero,25,sanvalentin
+precio-74,,Ramo Lila,25,sanvalentin
+precio-75,,Ramo Corazón,25,sanvalentin
+precio-76,,Ferrero Love,50,sanvalentin
+precio-77,,Caja Cumpleaños,30,sanvalentin
+precio-78,,Caja Amor,45,sanvalentin
+precio-79,,Globo Rosas,40,sanvalentin
+precio-80,,Globo Elefante,35,sanvalentin
+precio-81,,Corazón Globos,50,sanvalentin
+precio-82,,Corazón Girasol,25,sanvalentin
+precio-83,,Pack Osito,30,sanvalentin
+precio-84,,Corazón Gigante60,60,sanvalentin
+precio-85,,Ramo Frutal,25,sanvalentin
+precio-86,,Ramo Rocher,25,sanvalentin
+precio-87,,Caja Festiva,30,sanvalentin
+precio-88,,Corazón Mixto,30,sanvalentin
+precio-89,,Detalle Cumple,45,sanvalentin
+precio-90,,Corazón Dulce,40,sanvalentin
+precio-91,,Caja Pastel,25,sanvalentin
+precio-92,,Corazon Rosas,30,sanvalentin
+precio-93,,Ramo Lirios,20,sanvalentin
+precio-94,,Caja Bicolor,20,sanvalentin
+precio-95,,Corazón Nube,50,condolencias
+precio-96,,Cilindro Mix,25,cumpleanos
+precio-97,,Corazón Sol,35,"amor, sanvalentin"
+precio-98,,Ramo Solar,35,sanvalentin
+precio-99,,Mix Girasol,30,sanvalentin
+precio-100,,Ramo Central,20,sanvalentin
 `; 
 // ^^^ PEGA TUS DATOS ARRIBA ENTRE LAS COMILLAS ^^^
 
