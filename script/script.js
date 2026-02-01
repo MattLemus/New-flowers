@@ -85,7 +85,7 @@ precio-80,,Globo Elefante,35,sanvalentin
 precio-81,,Corazón Globos,50,sanvalentin
 precio-82,,Corazón Girasol,25,sanvalentin
 precio-83,,Pack Osito,30,sanvalentin
-precio-84,,Corazón Gigante60,60,sanvalentin
+precio-84,,Corazón Gigante60,60,condolencias
 precio-85,,Ramo Frutal,25,sanvalentin
 precio-86,,Ramo Rocher,25,sanvalentin
 precio-87,,Caja Festiva,30,sanvalentin
@@ -305,4 +305,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.15 });
     document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+
 });
