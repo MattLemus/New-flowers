@@ -72,7 +72,6 @@ precio-17,,Corazón Bicolor Ferrero,50,"amor, caja, rosas"
 precio-15,,Caja Sulley,30,"rosas, caja, amor"
 precio-13,,Ramo Estrella,30,"mix, ramo"
 precio-1,,Caja Lotso,50,"amor, caja, mix"
-precio-71,,Arreglo Fúnebre,,condolencias
 precio-72,,Ramo Pastel,30,sanvalentin
 precio-73,,Ramo Ferrero,25,sanvalentin
 precio-74,,Ramo Lila,25,sanvalentin
@@ -102,6 +101,7 @@ precio-97,,Corazón Sol,35,"amor, sanvalentin"
 precio-98,,Ramo Solar,35,sanvalentin
 precio-99,,Mix Girasol,30,sanvalentin
 precio-100,,Ramo Central,20,sanvalentin
+precio-101,,Dulce Abrazo,75,sanvalentin
 `; 
 // ^^^ PEGA TUS DATOS ARRIBA ENTRE LAS COMILLAS ^^^
 
@@ -307,3 +307,4 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
 
 });
+
